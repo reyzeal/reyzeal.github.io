@@ -9,14 +9,14 @@
     </url>
     
     <url>
-        <loc>http://reyzeal.com/2020/09/05/gratis-layanan-firebase/</loc>
+        <loc>http://reyzeal.com/2020/06/28/menggunakan-restful-put-patch-delete-php/</loc>
         
         <lastmod>2021-01-31</lastmod>
         
     </url>
     
     <url>
-        <loc>http://reyzeal.com/2020/06/28/menggunakan-restful-put-patch-delete-php/</loc>
+        <loc>http://reyzeal.com/2020/09/05/gratis-layanan-firebase/</loc>
         
         <lastmod>2021-01-31</lastmod>
         
@@ -47,6 +47,34 @@
     
     <url>
         <loc>http://reyzeal.com/tags/NoSQL/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://reyzeal.com/tags/PHP/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://reyzeal.com/tags/REST/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://reyzeal.com/tags/RESTful/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://reyzeal.com/tags/API/</loc>
         <lastmod>2021-01-31</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -89,34 +117,6 @@
     
     <url>
         <loc>http://reyzeal.com/tags/Google/</loc>
-        <lastmod>2021-01-31</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>http://reyzeal.com/tags/PHP/</loc>
-        <lastmod>2021-01-31</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>http://reyzeal.com/tags/REST/</loc>
-        <lastmod>2021-01-31</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>http://reyzeal.com/tags/RESTful/</loc>
-        <lastmod>2021-01-31</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>http://reyzeal.com/tags/API/</loc>
         <lastmod>2021-01-31</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
