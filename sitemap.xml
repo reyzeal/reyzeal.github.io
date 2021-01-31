@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+        <loc>http://example.com/2020/06/30/gratis-cloud-database-menggunakan-mongoDB/</loc>
+        
+        <lastmod>2021-01-31</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://example.com/2020/09/05/gratis-layanan-firebase/</loc>
+        
+        <lastmod>2021-01-31</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://example.com/2020/06/28/menggunakan-restful-put-patch-delete-php/</loc>
+        
+        <lastmod>2021-01-31</lastmod>
+        
+    </url>
+    
+
+    <url>
+        <loc>http://example.com/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    
+    <url>
+        <loc>http://example.com/tags/MongoDB/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/Cloud-Database/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/NoSQL/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/Cloud-Computing/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/Cloud-Storage/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/FaaS/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/BaaS/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/Mobile/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/Google/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/PHP/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/REST/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/RESTful/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/tags/API/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+
+    
+    <url>
+        <loc>http://example.com/categories/Database/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/categories/Web-development/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/categories/Web-development/API/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>http://example.com/categories/Web-development/API/Backend-development/</loc>
+        <lastmod>2021-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+</urlset>
