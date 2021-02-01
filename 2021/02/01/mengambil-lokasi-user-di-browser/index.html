@@ -89,13 +89,13 @@
                                     <span class="column is-narrow">
                                         
                                         
-                                        6 minutes read (About 889 words)
+                                        6 minutes read (About 869 words)
                                         </span>
                                 
                             </div>
                             <div class="card-text is-size-6-mobile mx-5" itemprop="articleBody">
                                 
-                                    <p>Lokasi user terkadang menjadi informasi yang penting ketika sebuah aplikasi menerapkan layanan berbasis lokasi pada fiturnya. Misalnya ada aplikasi olshop yang memberikan fitur COD pada konsumennya. Proses COD atau Cash On Delivery tentu hanya bisa dilakukan jika konsumen berada di jangkauan agen pengiriman olshop. Makanya, pengambilan informasi lokasi user menjadi prioritas utama ketika kita ingin menerapkan fitur tersebut. Lalu bagaimana kita mengambil data lokasi user melalui browser?<br><img src="/.com//img.png" alt="img.png"><br>Jika kita memiliki aplikasi web, tentu satu-satunya jalan adalah menggunakan jalan pemrograman JS atau dikenal dengan javascript. Lalu dengan JS code yang bakal kita racik itu, kita mencoba memperoleh data lokasi tersebut melalui browser. Itupun atas izin user dan website yang kita punya memiliki koneksi SSL atau gampangnya sudah menerapkan protokol HTTPS.</p>
+                                    <p>Lokasi user terkadang menjadi informasi yang penting ketika sebuah aplikasi menerapkan layanan berbasis lokasi pada fiturnya. Misalnya ada aplikasi olshop yang memberikan fitur COD pada konsumennya. Proses COD atau Cash On Delivery tentu hanya bisa dilakukan jika konsumen berada di jangkauan agen pengiriman olshop. Makanya, pengambilan informasi lokasi user menjadi prioritas utama ketika kita ingin menerapkan fitur tersebut. Lalu bagaimana kita mengambil data lokasi user melalui browser?<br><img src="/2021/02/01/mengambil-lokasi-user-di-browser/img.png" alt="img.png"><br>Jika kita memiliki aplikasi web, tentu satu-satunya jalan adalah menggunakan jalan pemrograman JS atau dikenal dengan javascript. Lalu dengan JS code yang bakal kita racik itu, kita mencoba memperoleh data lokasi tersebut melalui browser. Itupun atas izin user dan website yang kita punya memiliki koneksi SSL atau gampangnya sudah menerapkan protokol HTTPS.</p>
 <p>Jadi ada 3 hal yang akan kita bahas:</p>
 <ol>
 <li>JS Code untuk mengambil lokasi</li>
@@ -119,7 +119,7 @@
 </ol>
 </li>
 <li><p>timestamp</p>
-<p><img src="/.com//success.png" alt="alt"></p>
+<p><img src="/2021/02/01/mengambil-lokasi-user-di-browser/success.png" alt="alt"></p>
 </li>
 </ul>
 <p>Artinya, kita harus menyediakan suatu fungsi yang memiliki tepat satu parameter untuk<br>menangkap data GeolocationPosition dari callbacknya. Misalnya seperti ini:</p>
@@ -138,10 +138,10 @@
 <ol>
 <li>enableHighAccuracy : defaultnya false, boolean, mengatur tingkat akurasinya, semakin akurasi tinggi semakin membutuhkan waktu dan energi (terkait power saving)</li>
 <li>timeout : integer long, untuk mengatur waktu timeout</li>
-<li>maximumAge : defaultnya 0; waktu cache dari lokasi, jika diset 0 maka geolocation harus mengambil data yang baru, jika diset N milliseconds berarti lokasi akan dicache selama N milliseconds, selebihnya harus ambil ulang.<h2 id="Website-harus-HTTPS"><a href="#Website-harus-HTTPS" class="headerlink" title="Website harus HTTPS"></a>Website harus HTTPS</h2>Perlu dipahami bahwa standar website yang bisa menggunakan fitur ini hanyalah<br>website yang sudah menerapkan SSL atau protokol HTTPS. Tetapi hal ini tidak menjadi masalah ketika<br>Anda ingin mencobanya secara offline melalui localhost. Namun, jika ingin mengimplementasikan ke versi produksi, maka Anda harus memastikan website Anda sudah HTTPS. Jika tidak, maka akan keluar error di console seperti ini:<br><img src="/mengambil-lokasi-user-di-browser/http.png" alt="alt"></li>
+<li>maximumAge : defaultnya 0; waktu cache dari lokasi, jika diset 0 maka geolocation harus mengambil data yang baru, jika diset N milliseconds berarti lokasi akan dicache selama N milliseconds, selebihnya harus ambil ulang.<h2 id="Website-harus-HTTPS"><a href="#Website-harus-HTTPS" class="headerlink" title="Website harus HTTPS"></a>Website harus HTTPS</h2>Perlu dipahami bahwa standar website yang bisa menggunakan fitur ini hanyalah<br>website yang sudah menerapkan SSL atau protokol HTTPS. Tetapi hal ini tidak menjadi masalah ketika<br>Anda ingin mencobanya secara offline melalui localhost. Namun, jika ingin mengimplementasikan ke versi produksi, maka Anda harus memastikan website Anda sudah HTTPS. Jika tidak, maka akan keluar error di console seperti ini:<br><img src="/2021/02/01/mengambil-lokasi-user-di-browser/http.png" alt="alt"></li>
 </ol>
 <h2 id="Izin-Akses-Lokasi"><a href="#Izin-Akses-Lokasi" class="headerlink" title="Izin Akses Lokasi"></a>Izin Akses Lokasi</h2><p>User memiliki hak untuk menolak izin akses lokasi oleh browser. Tetapi, jika Anda memiliki<br>tujuan yang baik, dan dipercaya oleh user, maka ini tidak menjadi masalah yang besar.</p>
-<p>Setiap kali fungsi getCurrentPosition dipanggil, maka akan tampil permintaan izin dari browser<br>ke user. Seperti tampilan berikut ini:<br><img src="/.com//izin.png" alt="alt"></p>
+<p>Setiap kali fungsi getCurrentPosition dipanggil, maka akan tampil permintaan izin dari browser<br>ke user. Seperti tampilan berikut ini:<br><img src="/2021/02/01/mengambil-lokasi-user-di-browser/izin.png" alt="alt"></p>
 <h2 id="Akurasi"><a href="#Akurasi" class="headerlink" title="Akurasi"></a>Akurasi</h2><p>Untuk device user yang memiliki manajemen lokasi yang baik seperti smartphone, tab, atau apapun yang memiliki hardware GPS<br>akurasinya cukup baik dan akurat. Namun untuk device yang hanya mengandalkan geolocation dari ISP / penyedia internet, biasanya<br>pengambilan informasi lokasi yang dihasilkan mengikuti letak ISPnya.</p>
 <h2 id="Kesimpulan"><a href="#Kesimpulan" class="headerlink" title="Kesimpulan"></a>Kesimpulan</h2><p>Apabila website Anda mayoritas digunakan oleh user mobile, pengambilan geolocationnya<br>cukup bisa diandalkan karena informasi lokasi dari browser didapat dari GPS. Namun, jika<br>aplikasi Anda diakses oleh pengguna PC / Laptop yang umumnya tidak memiliki manajemen lokasi<br>yang akurat, maka hasil geolocationnya juga tidak bisa diandalkan.</p>
 
@@ -215,7 +215,7 @@
         </div>
         <div class="row">
             <div class="col text-center text-muted" style="font-size: 0.8em;">
-                &copy; 2021 My Personal Blog by <a target="_blank" rel="noopener" href="https://reyzeal.com">Reyzeal.com</a>
+                &copy; 2021 My Personal Blog by <a href="https://reyzeal.com">Reyzeal.com</a>
             </div>
         </div>
     </div>

@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>http://example.com/2020/06/28/menggunakan-restful-put-patch-delete-php/</loc>
+        <loc>https://reyzeal.com/2020/06/28/menggunakan-restful-put-patch-delete-php/</loc>
         
         <lastmod>2021-02-01</lastmod>
         
     </url>
     
     <url>
-        <loc>http://example.com/2020/06/30/gratis-cloud-database-menggunakan-mongoDB/</loc>
+        <loc>https://reyzeal.com/2020/06/30/gratis-cloud-database-menggunakan-mongoDB/</loc>
         
         <lastmod>2021-02-01</lastmod>
         
     </url>
     
     <url>
-        <loc>http://example.com/2020/09/05/gratis-layanan-firebase/</loc>
+        <loc>https://reyzeal.com/2020/09/05/gratis-layanan-firebase/</loc>
         
         <lastmod>2021-02-01</lastmod>
         
     </url>
     
     <url>
-        <loc>http://example.com/2021/02/01/mengambil-lokasi-user-di-browser/</loc>
+        <loc>https://reyzeal.com/2021/02/01/mengambil-lokasi-user-di-browser/</loc>
         
         <lastmod>2021-02-01</lastmod>
         
@@ -31,7 +31,7 @@
     
 
     <url>
-        <loc>http://example.com/</loc>
+        <loc>https://reyzeal.com/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -39,126 +39,126 @@
 
     
     <url>
-        <loc>http://example.com/tags/MongoDB/</loc>
+        <loc>https://reyzeal.com/tags/MongoDB/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/Cloud-Database/</loc>
+        <loc>https://reyzeal.com/tags/Cloud-Database/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/NoSQL/</loc>
+        <loc>https://reyzeal.com/tags/NoSQL/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/Cloud-Computing/</loc>
+        <loc>https://reyzeal.com/tags/Cloud-Computing/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/Cloud-Storage/</loc>
+        <loc>https://reyzeal.com/tags/Cloud-Storage/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/FaaS/</loc>
+        <loc>https://reyzeal.com/tags/FaaS/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/BaaS/</loc>
+        <loc>https://reyzeal.com/tags/BaaS/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/Mobile/</loc>
+        <loc>https://reyzeal.com/tags/Mobile/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/Google/</loc>
+        <loc>https://reyzeal.com/tags/Google/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/JavaScript/</loc>
+        <loc>https://reyzeal.com/tags/JavaScript/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/Browser/</loc>
+        <loc>https://reyzeal.com/tags/Browser/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/Firefox/</loc>
+        <loc>https://reyzeal.com/tags/Firefox/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/Chrome/</loc>
+        <loc>https://reyzeal.com/tags/Chrome/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/Geolocation/</loc>
+        <loc>https://reyzeal.com/tags/Geolocation/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/PHP/</loc>
+        <loc>https://reyzeal.com/tags/PHP/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/REST/</loc>
+        <loc>https://reyzeal.com/tags/REST/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/RESTful/</loc>
+        <loc>https://reyzeal.com/tags/RESTful/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/tags/API/</loc>
+        <loc>https://reyzeal.com/tags/API/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
@@ -167,28 +167,28 @@
 
     
     <url>
-        <loc>http://example.com/categories/Database/</loc>
+        <loc>https://reyzeal.com/categories/Database/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/categories/Web-development/</loc>
+        <loc>https://reyzeal.com/categories/Web-development/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/categories/Web-development/API/</loc>
+        <loc>https://reyzeal.com/categories/Web-development/API/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
-        <loc>http://example.com/categories/Web-development/API/Backend-development/</loc>
+        <loc>https://reyzeal.com/categories/Web-development/API/Backend-development/</loc>
         <lastmod>2021-02-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
