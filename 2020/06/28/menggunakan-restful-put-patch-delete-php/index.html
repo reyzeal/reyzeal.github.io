@@ -70,47 +70,38 @@
         <article class="my-3" itemscope itemprop="blogPost">
     <div class="card">
         <div class="row d-flex flex-row-reverse">
-
-            <div class="col-md-6 col-12 d-flex align-items-center">
-                
-                    <div>
-                        <img src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/xAw0vrBiJW7wFBaxOTJtEDhseVB6etgCO4WQvtEt.jpeg" class="img-fluid" alt=""/>
-                        <div class="mx-5 text-muted my-2">
-                        <span class="column is-narrow">
-                            
-                                <time datetime="2020-06-28T17:34:17.000Z" itemprop="datePublished">28 June 2020</time>
-                            
-                        </span>
-                            
-                                <span class="column is-narrow article-category">
-                            <i class="far fa-folder"></i>
-                            <a class="article-category-link" href="/categories/Web-development/">Web development</a>
-                        </span>
-                            
-                            
-                                <span class="column is-narrow">
-                                    
-                                    
-                                    4 minutes read (About 650 words)
-                        </span>
-                            
-                        </div>
-                    </div>
-                
-            </div>
-            <div class="col-md-6 col-12">
-
-                    <div class="card-body py-5">
-                        <h1 class="card-title mx-5" itemprop="name">
-                            
-                                Menggunakan Metode RESTful PUT, PATCH, DELETE di PHP
-                            
-                        </h1>
-
-                        <div class="card-text is-size-6-mobile mx-5" itemprop="articleBody">
-                            
-                                <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Mengembangkan arsitektur web API Restful di PHP memang memiliki limitasi yang mana metode <strong>PUT</strong> dan <strong>PATCH</strong> tidak dapat menerima data yang dikirimkan dalam body request-nya. Walaupun secara rute, metode <strong>PUT</strong> dan <strong>PATCH</strong> dapat digunakan untuk membedakan alur request. Namun data yang tersemat dapat dipastikan tidak terkirim, sehingga data-data seperti <code>id</code>, <code>field</code> yang akan diganti, dan semacamnya pun tidak terbaca. Lalu bagaimana solusinya?</span>&nbsp;</p>
-<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/xAw0vrBiJW7wFBaxOTJtEDhseVB6etgCO4WQvtEt.jpeg" style="width: 300px;" class="fr-fic fr-dib"></p>
+            
+                    <div class="col-12">
+                        <div class="card-body py-5">
+                            <h1 class="card-title mx-5" itemprop="name">
+                                
+                                    Menggunakan Metode RESTful PUT, PATCH, DELETE di PHP
+                                
+                            </h1>
+                            <div class="mx-5 text-muted my-2">
+                                    <span class="column is-narrow">
+                                        
+                                            <time datetime="2020-06-28T17:34:17.000Z" itemprop="datePublished">28 June 2020</time>
+                                        
+                                    </span>
+                                
+                                    <span class="column is-narrow article-category">
+                                            <i class="far fa-folder"></i>
+                                            <a class="article-category-link" href="/categories/Web-development/">Web development</a>
+                                        </span>
+                                
+                                
+                                    <span class="column is-narrow">
+                                        
+                                        
+                                        4 minutes read (About 650 words)
+                                        </span>
+                                
+                            </div>
+                            <div class="card-text is-size-6-mobile mx-5" itemprop="articleBody">
+                                
+                                    <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Mengembangkan arsitektur web API Restful di PHP memang memiliki limitasi yang mana metode <strong>PUT</strong> dan <strong>PATCH</strong> tidak dapat menerima data yang dikirimkan dalam body request-nya. Walaupun secara rute, metode <strong>PUT</strong> dan <strong>PATCH</strong> dapat digunakan untuk membedakan alur request. Namun data yang tersemat dapat dipastikan tidak terkirim, sehingga data-data seperti <code>id</code>, <code>field</code> yang akan diganti, dan semacamnya pun tidak terbaca. Lalu bagaimana solusinya?</span>&nbsp;</p>
+<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/xAw0vrBiJW7wFBaxOTJtEDhseVB6etgCO4WQvtEt.jpeg" style="width: 300px;"></p>
 <p style="text-align: center;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Photo by&nbsp;</span><a href="https://unsplash.com/@ilyapavlov?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_self"><span style="color: rgb(52,144,220);background-color: transparent;font-family: Nunito, sans-serif;">Ilya Pavlov</span></a><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">&nbsp;on&nbsp;</span><a href="https://reyzeal.com/s/photos/website?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_self"><span style="color: rgb(52,144,220);background-color: transparent;font-family: Nunito, sans-serif;">Unsplash</span></a></p>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Limitasi ini dapat diatasi dengan menggunakan ekstensi <strong>PECL</strong>. Terdapat suatu ekstensi bernama apfd yang berfungsi melakukan parsing&nbsp;</span><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);"><code>multipart/form-data</code></span><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">, <code>x-www-urlencoded</code> maupun <code>json_post</code> tanpa membedakan jenis metodenya. Kita tahu bahwa selama ini PHP hanya dapat membaca form dari metode <strong>GET</strong> dan <strong>POST</strong>. Dengan adanya ekstensi ini, maka data yang dikirim melalui metode <strong>PUT</strong> dan <strong>PATCH</strong> pun tetap akan terbaca.</span></p>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Library apfd :&nbsp;</span><a href="https://pecl.php.net/package/apfd" target="_self"><span style="color: rgb(52,144,220);background-color: transparent;font-family: Nunito, sans-serif;">https://pecl.php.net/package/apfd</span></a></p>
@@ -121,7 +112,7 @@
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Pertama, dengan menggunakan <code>pecl</code> untuk compile dan build apfd.so:</span></p>
 <pre style="text-align: justify;"><code lang="bash">pecl install apfd</code></pre>
 <p style="text-align: justify;"><br></p>
-<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/UWWh1uSOVaBsuucFvoW0KUMSvbMcPkklJ98oEuoB.png" alt="undefined" style="height: 400px; width: auto;" class="fr-fic fr-dii"></p>
+<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/UWWh1uSOVaBsuucFvoW0KUMSvbMcPkklJ98oEuoB.png" alt="undefined" style="height: 400px; width: auto;"></p>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Kedua, dengan menginstall <code>apfd.so</code> ke dalam <code>php.ini</code> menggunakan editor kesukaan Anda:</span></p>
 <pre style="text-align: justify;"><code lang="bash">extension=apfd.so</code></pre>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Perlu dipahami bahwa php.ini terdapat di beberapa tempat seperti <code>apache2</code>, <code>fpm</code> dan <code>cli</code>. Jika Anda menggunakan PHP dalam terminal console / SSH, berarti Anda perlu melakukan edit <code>php.ini</code> yang ada pada folder cli. Sedangkan apache2 dan FPM umumnya digunakan untuk menjalankan web service pada server tersebut. Silahkan cek terlebih dahulu PHP versi berapa yang Anda gunakan, dan PHP pada platform apa yang akan dipasang (<code>cli</code>, <code>apache2</code> atau <code>fpm</code>), Misalnya, jika environment server memiliki PHP versi 7.4 dengan fitur <code>cli</code>, <code>apache2</code> dan <code>fpm</code> aktif maka <code>php.ini&nbsp;</code>ada dibeberapa tempat ini:&nbsp;</span></p>
@@ -130,7 +121,7 @@
 <pre style="text-align: justify;"><code lang="bash">sudo nano /etc/php/7.4/apache2/php.ini</code></pre>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">cari bagian extension</span></p>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">tambahkan <code>extension=apfd.so</code></span></p>
-<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/DabfMFUBcGI79MqkG2m2HcODzU87OSdAfAexyuIB.png" alt="undefined" style="height: 400px; width: auto;" class="fr-fic fr-dii"></p>
+<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/DabfMFUBcGI79MqkG2m2HcODzU87OSdAfAexyuIB.png" alt="undefined" style="height: 400px; width: auto;"></p>
 <p style="text-align: justify;">Simpan kemudian restart apache2 / fpm service. Jika Anda menggunakan cli, Anda hanya perlu menjalankan ulang script yang Anda gunakan.</p>
 <pre style="text-align: justify;"><code lang="bash">systemctl restart apache2systemctl restart php7.4-fpm</code></pre>
 <p style="text-align: justify;">Sesuaikan versi php Anda jika ingin merestart FPM.</p>
@@ -140,53 +131,53 @@
 <pre style="text-align: justify;"><code lang="php">echo phpinfo();</code></pre>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Jika instalasi berhasil, akan tampil hasil berikut:</span></p>
 <p style="text-align: justify;"><br></p>
-<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/J1EwG0C3TgrfDHs9MEuDofEedQAVCHLseaQCiUuT.png" alt="undefined" style="height: 300px; width: 500px;" class="fr-fic fr-dii"></p>
+<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/J1EwG0C3TgrfDHs9MEuDofEedQAVCHLseaQCiUuT.png" alt="undefined" style="height: 300px; width: 500px;"></p>
 <p style="text-align: justify;">Lihat bagian Configuration dimana apfd seharusnya tampil disana.</p>
 <h4 style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">2. Mencobanya dengan Postman</span></h4>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Sebelum itu siapkan terlebih dahulu script untuk melakukan test. Tujuan script ini untuk mengetahui jenis request method dan data yang dikirimkan (baik field key-value dan field yang berupa file attactment).</span></p>
 <pre style="text-align: justify;"><code lang="php">&lt;?phpheader(&quot;Content-Type: application/json&quot;);$data = [    &#39;method&#39; =&gt; $_SERVER[&#39;REQUEST_METHOD&#39;],    &#39;data&#39; =&gt; $_POST,    &#39;files&#39; =&gt; $_FILES];echo json_encode($data, JSON_PRETTY_PRINT);</code></pre>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Kemudian masukkan body request seperti berikut:</span></p>
-<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/c8v1I0iMWzrUGzEVXTMvDuWHF60MqeUkE1D3mT6K.png" alt="undefined" style="height: 100px; width: auto;" class="fr-fic fr-dii"></p>
+<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/c8v1I0iMWzrUGzEVXTMvDuWHF60MqeUkE1D3mT6K.png" alt="undefined" style="height: 100px; width: auto;"></p>
 <p style="text-align: justify;"><br></p>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;">Seharusnya akan muncul hasilnya seperti ini:</span></p>
-<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/n74PbHD3C5uhBCK7iQuoVI8GWojHzthWB3z9lsEH.png" alt="undefined" style="height: 200px; width: auto;" class="fr-fic fr-dii"></p>
+<p style="text-align: center;"><img class="img-fluid" src="https://storage.googleapis.com/reyzeal-blog.appspot.com/foto/n74PbHD3C5uhBCK7iQuoVI8GWojHzthWB3z9lsEH.png" alt="undefined" style="height: 200px; width: auto;"></p>
 <p style="text-align: justify;"><br></p>
 <h4 style="text-align: justify;">Kesimpulan</h4>
 <p style="text-align: justify;"><span style="font-family: Nunito, sans-serif;">Dalam arsitektur Restful API memang terdapat banyak metode yang digunakan untuk routing resource. Tidak hanya GET, POST saja, tapi ada PUT, PATCH, DELETE dan sebagainya. PHP secara default / builtin hanya support dengan metode GET dan POST. Anda tidak perlu melakukan instalasi ekstensi ini jika Anda hanya perlu menggunakan 2 jenis metode GET dan POST. Tetapi alangkah lebih baiknya jika melakukan pengembangan Restful API di PHP untuk memasang ekstensi apfd ini. Agar terciptanya kemudahan dan pengalaman yang lebih baik dalam development Restful API di PHP. Apalagi jika Anda bekerja dalam team dan menggunakan platform yang bervariasi. Tentunya, platform frontend seperti javascript support penggunaan semua metode Restful, sehingga mengharuskan backend developer terutama berbasis PHP untuk mengimbanginya.</span></p>
 <p style="text-align: justify;"><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-family: Nunito, sans-serif;"><strong>Semoga Bermanfaat</strong></span></p>
 
 
-                            
-                        </div>
-                        
-                            <div class="columns is-variable is-1 is-multiline is-mobile">
-                                
-                                    <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/PHP/">#PHP</a></span>
-                                
-                                    <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/REST/">#REST</a></span>
-                                
-                                    <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/RESTful/">#RESTful</a></span>
-                                
-                                    <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/API/">#API</a></span>
                                 
                             </div>
-                        
-                        
-                            <div class="columns is-mobile is-multiline article-nav">
+                            
+                                <div class="columns is-variable is-1 is-multiline is-mobile">
+                                    
+                                        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/PHP/">#PHP</a></span>
+                                    
+                                        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/REST/">#REST</a></span>
+                                    
+                                        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/RESTful/">#RESTful</a></span>
+                                    
+                                        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/API/">#API</a></span>
+                                    
+                                </div>
+                            
+                            
+                                <div class="columns is-mobile is-multiline article-nav">
                 <span class="column is-12-mobile is-half-desktop  article-nav-prev">
                     
                         <a href="/2020/06/30/gratis-cloud-database-menggunakan-mongoDB/">Gratis Cloud Database Menggunakan MongoDB</a>
                     
                 </span>
-                                <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-next">
-                                    
-                                </span>
-                            </div>
-                        
+                                    <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-next">
+                                        
+                                    </span>
+                                </div>
+                            
+                        </div>
+
                     </div>
-
-            </div>
-
+            
         </div>
     </div>
 
@@ -224,7 +215,7 @@
         </div>
         <div class="row">
             <div class="col text-center text-muted" style="font-size: 0.8em;">
-                &copy; 2021 My Personal Blog by <a href="https://reyzeal.com">Reyzeal.com</a>
+                &copy; 2021 My Personal Blog by <a target="_blank" rel="noopener" href="https://reyzeal.com">Reyzeal.com</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Script untuk Mengambil Lokasi User di Browser</title>
+
+
+    <meta name="author" content="Rizal Ardhi Rahmadani">
+
+<link rel="icon" type="image/png" sizes="32x32" href="/img/GitHub-Mark-32px.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/img/GitHub-Mark-64px.png">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P2H4GXT');</script>
+<!-- End Google Tag Manager -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/app.css">
+    <script>
+        function ___(){
+            alert("Mohon maaf Ads Blocknya dimatikan terlebih dahulu")
+            document.write("")
+        }
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2H4GXT"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="/img/GitHub-Mark-32px.png">
+            
+                Reyzeal
+            
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    
+
+                </ul>
+            
+<!--            <form class="d-flex">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--            </form>-->
+        </div>
+    </div>
+</nav>
+<section class="section">
+    <div class="container">
+        <article class="my-3" itemscope itemprop="blogPost">
+    <div class="card">
+        <div class="row d-flex flex-row-reverse">
+            
+                    <div class="col-12">
+                        <div class="card-body py-5">
+                            <h1 class="card-title mx-5" itemprop="name">
+                                
+                                    Script untuk Mengambil Lokasi User di Browser
+                                
+                            </h1>
+                            <div class="mx-5 text-muted my-2">
+                                    <span class="column is-narrow">
+                                        
+                                            <time datetime="2021-02-01T15:36:58.000Z" itemprop="datePublished">01 February 2021</time>
+                                        
+                                    </span>
+                                
+                                
+                                    <span class="column is-narrow">
+                                        
+                                        
+                                        6 minutes read (About 889 words)
+                                        </span>
+                                
+                            </div>
+                            <div class="card-text is-size-6-mobile mx-5" itemprop="articleBody">
+                                
+                                    <p>Lokasi user terkadang menjadi informasi yang penting ketika sebuah aplikasi menerapkan layanan berbasis lokasi pada fiturnya. Misalnya ada aplikasi olshop yang memberikan fitur COD pada konsumennya. Proses COD atau Cash On Delivery tentu hanya bisa dilakukan jika konsumen berada di jangkauan agen pengiriman olshop. Makanya, pengambilan informasi lokasi user menjadi prioritas utama ketika kita ingin menerapkan fitur tersebut. Lalu bagaimana kita mengambil data lokasi user melalui browser?<br><img src="/.com//img.png" alt="img.png"><br>Jika kita memiliki aplikasi web, tentu satu-satunya jalan adalah menggunakan jalan pemrograman JS atau dikenal dengan javascript. Lalu dengan JS code yang bakal kita racik itu, kita mencoba memperoleh data lokasi tersebut melalui browser. Itupun atas izin user dan website yang kita punya memiliki koneksi SSL atau gampangnya sudah menerapkan protokol HTTPS.</p>
+<p>Jadi ada 3 hal yang akan kita bahas:</p>
+<ol>
+<li>JS Code untuk mengambil lokasi</li>
+<li>Website harus HTTPS</li>
+<li>Permintaan akses lokasi diizinkan oleh user</li>
+</ol>
+<h2 id="Kode-Pengambilan-Lokasi"><a href="#Kode-Pengambilan-Lokasi" class="headerlink" title="Kode Pengambilan Lokasi"></a>Kode Pengambilan Lokasi</h2><p>Dalam Web/Browser terdapat API bernama <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#navigator_interface">Navigator</a> yang dapat diakses untuk memperoleh dan mengolah tentang data lokasi atau lebih tepatnya <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#geolocation_interface">geolocation</a>.<br>Yaitu dengan memanggil method bernama <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#getcurrentposition-method">getCurrentPosition</a>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// minimal hanya menyediakan successCallbacknya</span></span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback)</span><br><span class="line"><span class="comment">// lengkap sampai errorCallback dan Options</span></span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback,errorCallback,options)</span><br></pre></td></tr></table></figure>
+<p>Sesuai dengan dokumentasi, terdapat satu parameter yang wajib yaitu fungsi yang dipanggil ketika pengambilan<br>data lokasi berhasil. Sisanya optional yaitu fungsi yang dipanggil ketika terjadi error dan object data untuk opsi/konfigurasi.</p>
+<h3 id="Success-Callback"><a href="#Success-Callback" class="headerlink" title="Success Callback"></a>Success Callback</h3><p>Fungsi yang dipanggil ketika sukses akan memiliki parameter berbentuk <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#position_interface">GeolocationPosition</a> yang<br>terdiri dari beberapa atribut diantaranya:</p>
+<ul>
+<li><p>coords (<a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#coordinates_interface">GeolocationCoordinates</a>)</p>
+<ol>
+<li>accuracy : menandakan seberapa akurasi lokasinya</li>
+<li>altitude : ketinggian</li>
+<li>altitudeAccuracy : seberapa akurasi untuk ketinggiannya</li>
+<li>heading : terkait data akselerometer, device mengarah kemana 0-360 derajat, NaN jika stasioner</li>
+<li>latitude : garis lintang</li>
+<li>longitude : garis bujur</li>
+<li>speed : kecepatan device, biasanya yang mengimplementasikan akselerometer.</li>
+</ol>
+</li>
+<li><p>timestamp</p>
+<p><img src="/.com//success.png" alt="alt"></p>
+</li>
+</ul>
+<p>Artinya, kita harus menyediakan suatu fungsi yang memiliki tepat satu parameter untuk<br>menangkap data GeolocationPosition dari callbacknya. Misalnya seperti ini:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">successCallback</span>(<span class="params">geolocation</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;</span><br><span class="line">    </span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback);</span><br></pre></td></tr></table></figure>
+<p>Atau jika mau menggunakan Arrow Function juga bisa:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> successCallback = <span class="function">(<span class="params">geolocation</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;</span><br><span class="line">    </span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback);</span><br></pre></td></tr></table></figure>
+<p>Mau dibuat inline juga bisa:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(<span class="function"><span class="keyword">function</span>(<span class="params">geolocation</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;</span><br><span class="line"></span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>Atau inline Arrow Function:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(<span class="function">(<span class="params">&#123;coords, timestamp&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = coords;</span><br><span class="line"></span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>Dengan demikian Anda bisa mengambil latitude, longitude dari geolocation browser. Untuk parameter-parameter<br>lainnya juga dapat diambil namun tidak semua parameternya ada karena tidak setiap device memiliki sensor yang lengkap.</p>
+<p>Jika Anda sudah bisa mendapatkan latitude, longitude dari user, Anda dapat melakukan<br>integrasi dengan google maps, leaflet atau platform-platform lain yang dapat menampilkan<br>dan menggambarkan posisi user dalam maps. Ataupun mengolahnya dengan algoritma-algoritma yang Anda inginkan.</p>
+<h3 id="Error-Callback"><a href="#Error-Callback" class="headerlink" title="Error Callback"></a>Error Callback</h3><p>Fungsi ini dipanggil jika terdapat error dalam pengambilan data lokasi user. Banyak hal kemungkinannya, diantaranya<br>tidak mendapatkan izin user, fitur geolocation tidak ada di browser tersebut, timeout dll. Sederhananya, siapkan satu fungsi dengan satu parameter<br>yang digunakan untuk log / mengolah error yang terjadi. Seperti contoh dibawah ini:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">successCallback</span>(<span class="params">geolocation</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;</span><br><span class="line"></span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">errorCallback</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(<span class="string">`Terjadi Kesalahan (<span class="subst">$&#123;err.code&#125;</span>): <span class="subst">$&#123;err.message&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback, errorCallback);</span><br></pre></td></tr></table></figure>
+<h3 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h3><p>Terdapat opsi untuk mengatur pengambilan geolocation. Sesuai dokumentasi <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#position_options_interface">PositionOptions</a> terdapat<br>3 parameter yang dapat diatur:</p>
+<ol>
+<li>enableHighAccuracy : defaultnya false, boolean, mengatur tingkat akurasinya, semakin akurasi tinggi semakin membutuhkan waktu dan energi (terkait power saving)</li>
+<li>timeout : integer long, untuk mengatur waktu timeout</li>
+<li>maximumAge : defaultnya 0; waktu cache dari lokasi, jika diset 0 maka geolocation harus mengambil data yang baru, jika diset N milliseconds berarti lokasi akan dicache selama N milliseconds, selebihnya harus ambil ulang.<h2 id="Website-harus-HTTPS"><a href="#Website-harus-HTTPS" class="headerlink" title="Website harus HTTPS"></a>Website harus HTTPS</h2>Perlu dipahami bahwa standar website yang bisa menggunakan fitur ini hanyalah<br>website yang sudah menerapkan SSL atau protokol HTTPS. Tetapi hal ini tidak menjadi masalah ketika<br>Anda ingin mencobanya secara offline melalui localhost. Namun, jika ingin mengimplementasikan ke versi produksi, maka Anda harus memastikan website Anda sudah HTTPS. Jika tidak, maka akan keluar error di console seperti ini:<br><img src="/mengambil-lokasi-user-di-browser/http.png" alt="alt"></li>
+</ol>
+<h2 id="Izin-Akses-Lokasi"><a href="#Izin-Akses-Lokasi" class="headerlink" title="Izin Akses Lokasi"></a>Izin Akses Lokasi</h2><p>User memiliki hak untuk menolak izin akses lokasi oleh browser. Tetapi, jika Anda memiliki<br>tujuan yang baik, dan dipercaya oleh user, maka ini tidak menjadi masalah yang besar.</p>
+<p>Setiap kali fungsi getCurrentPosition dipanggil, maka akan tampil permintaan izin dari browser<br>ke user. Seperti tampilan berikut ini:<br><img src="/.com//izin.png" alt="alt"></p>
+<h2 id="Akurasi"><a href="#Akurasi" class="headerlink" title="Akurasi"></a>Akurasi</h2><p>Untuk device user yang memiliki manajemen lokasi yang baik seperti smartphone, tab, atau apapun yang memiliki hardware GPS<br>akurasinya cukup baik dan akurat. Namun untuk device yang hanya mengandalkan geolocation dari ISP / penyedia internet, biasanya<br>pengambilan informasi lokasi yang dihasilkan mengikuti letak ISPnya.</p>
+<h2 id="Kesimpulan"><a href="#Kesimpulan" class="headerlink" title="Kesimpulan"></a>Kesimpulan</h2><p>Apabila website Anda mayoritas digunakan oleh user mobile, pengambilan geolocationnya<br>cukup bisa diandalkan karena informasi lokasi dari browser didapat dari GPS. Namun, jika<br>aplikasi Anda diakses oleh pengguna PC / Laptop yang umumnya tidak memiliki manajemen lokasi<br>yang akurat, maka hasil geolocationnya juga tidak bisa diandalkan.</p>
+
+                                
+                            </div>
+                            
+                                <div class="columns is-variable is-1 is-multiline is-mobile">
+                                    
+                                        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/JavaScript/">#JavaScript</a></span>
+                                    
+                                        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Browser/">#Browser</a></span>
+                                    
+                                        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Firefox/">#Firefox</a></span>
+                                    
+                                        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Chrome/">#Chrome</a></span>
+                                    
+                                        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Geolocation/">#Geolocation</a></span>
+                                    
+                                </div>
+                            
+                            
+                                <div class="columns is-mobile is-multiline article-nav">
+                <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+                    
+                </span>
+                                    <span class="column is-12-mobile is-half-desktop  article-nav-next">
+                                        
+                                            <a href="/2020/09/05/gratis-layanan-firebase/">Gratis Layanan Firebase</a>
+                                        
+                                    </span>
+                                </div>
+                            
+                        </div>
+
+                    </div>
+            
+        </div>
+    </div>
+
+</article>
+
+
+
+
+    </div>
+</section>
+<footer class="bg-dark text-white">
+    <div class="container py-5">
+        <div class="row pb-2" style="font-size: 1em;">
+            <div class="col text-center">
+                Contact me:
+                <div class="" style="font-size: 1em;">
+                    <a class="text-decoration-none" target="_blank" rel="noopener" href="https://twitter.com/reyzeal">
+                        <i class="bi-twitter"></i> <span class="text-muted">Twitter</span>
+                    </a>
+
+                    <a class="text-decoration-none" target="_blank" rel="noopener" href="https://github.com/reyzeal">
+                        <i class="bi-github text-white"></i> <span class="text-muted">Github</span>
+                    </a>
+
+                    <a class="text-decoration-none" target="_blank" rel="noopener" href="https://www.linkedin.com/in/rizal-ardhi-rahmadani/">
+                        <i class="bi-linkedin"></i> <span class="text-muted">Linkedin</span>
+                    </a>
+
+                    <a class="text-decoration-none" target="_blank" rel="noopener" href="https://instagram.com/reyzeal">
+                        <i class="bi-instagram text-warning"></i> <span class="text-muted">Instagram</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center text-muted" style="font-size: 0.8em;">
+                &copy; 2021 My Personal Blog by <a target="_blank" rel="noopener" href="https://reyzeal.com">Reyzeal.com</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+<script async data-ad-client="ca-pub-7620612957607349" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" onerror="___()"></script>
+</body>
+</html>
