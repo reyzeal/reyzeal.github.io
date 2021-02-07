@@ -4,162 +4,190 @@
     <url>
         <loc>https://reyzeal.com/2020/06/28/menggunakan-restful-put-patch-delete-php/</loc>
         
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         
     </url>
     
     <url>
         <loc>https://reyzeal.com/2020/06/30/gratis-cloud-database-menggunakan-mongoDB/</loc>
         
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         
     </url>
     
     <url>
         <loc>https://reyzeal.com/2020/09/05/gratis-layanan-firebase/</loc>
         
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         
     </url>
     
     <url>
         <loc>https://reyzeal.com/2021/02/01/mengambil-lokasi-user-di-browser/</loc>
         
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/2021/02/07/Menghemat-Listrik-dengan-Arduino/</loc>
+        
+        <lastmod>2021-02-07</lastmod>
         
     </url>
     
 
     <url>
         <loc>https://reyzeal.com/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     
     <url>
+        <loc>https://reyzeal.com/tags/arduino/</loc>
+        <lastmod>2021-02-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/nodemcu/</loc>
+        <lastmod>2021-02-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/iot/</loc>
+        <lastmod>2021-02-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
         <loc>https://reyzeal.com/tags/MongoDB/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/Cloud-Database/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/NoSQL/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/Cloud-Computing/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/Cloud-Storage/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/FaaS/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/BaaS/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/Mobile/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/Google/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/JavaScript/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/Browser/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/Firefox/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/Chrome/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/Geolocation/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/PHP/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/REST/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/RESTful/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/tags/API/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
@@ -168,28 +196,28 @@
     
     <url>
         <loc>https://reyzeal.com/categories/Database/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/categories/Web-development/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/categories/Web-development/API/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
     
     <url>
         <loc>https://reyzeal.com/categories/Web-development/API/Backend-development/</loc>
-        <lastmod>2021-02-01</lastmod>
+        <lastmod>2021-02-07</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>

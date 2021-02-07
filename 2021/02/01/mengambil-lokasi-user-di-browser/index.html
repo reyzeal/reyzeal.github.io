@@ -9,8 +9,7 @@
 
     <meta name="author" content="Rizal Ardhi Rahmadani">
 
-<link rel="icon" type="image/png" sizes="32x32" href="/img/GitHub-Mark-32px.png">
-<link rel="icon" type="image/png" sizes="64x64" href="/img/GitHub-Mark-64px.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/img/logo64.png">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -22,7 +21,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/atom-one-dark.css">
     <script>
         function ___(){
             alert("Mohon maaf Ads Blocknya dimatikan terlebih dahulu")
@@ -38,7 +38,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="/img/GitHub-Mark-32px.png">
+            <img src="/img/logo.png" width="32">
             
                 Reyzeal
             
@@ -103,7 +103,10 @@
 <li>Permintaan akses lokasi diizinkan oleh user</li>
 </ol>
 <h2 id="Kode-Pengambilan-Lokasi"><a href="#Kode-Pengambilan-Lokasi" class="headerlink" title="Kode Pengambilan Lokasi"></a>Kode Pengambilan Lokasi</h2><p>Dalam Web/Browser terdapat API bernama <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#navigator_interface">Navigator</a> yang dapat diakses untuk memperoleh dan mengolah tentang data lokasi atau lebih tepatnya <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#geolocation_interface">geolocation</a>.<br>Yaitu dengan memanggil method bernama <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#getcurrentposition-method">getCurrentPosition</a>.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// minimal hanya menyediakan successCallbacknya</span></span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback)</span><br><span class="line"><span class="comment">// lengkap sampai errorCallback dan Options</span></span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback,errorCallback,options)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-comment">// minimal hanya menyediakan successCallbacknya</span>
+navigator.geolocation.getCurrentPosition(successCallback)
+<span class="hljs-comment">// lengkap sampai errorCallback dan Options</span>
+navigator.geolocation.getCurrentPosition(successCallback,errorCallback,options)</code></pre>
 <p>Sesuai dengan dokumentasi, terdapat satu parameter yang wajib yaitu fungsi yang dipanggil ketika pengambilan<br>data lokasi berhasil. Sisanya optional yaitu fungsi yang dipanggil ketika terjadi error dan object data untuk opsi/konfigurasi.</p>
 <h3 id="Success-Callback"><a href="#Success-Callback" class="headerlink" title="Success Callback"></a>Success Callback</h3><p>Fungsi yang dipanggil ketika sukses akan memiliki parameter berbentuk <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#position_interface">GeolocationPosition</a> yang<br>terdiri dari beberapa atribut diantaranya:</p>
 <ul>
@@ -123,17 +126,43 @@
 </li>
 </ul>
 <p>Artinya, kita harus menyediakan suatu fungsi yang memiliki tepat satu parameter untuk<br>menangkap data GeolocationPosition dari callbacknya. Misalnya seperti ini:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">successCallback</span>(<span class="params">geolocation</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;</span><br><span class="line">    </span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">successCallback</span>(<span class="hljs-params">geolocation</span>)</span>&#123;
+    <span class="hljs-keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;
+    
+    alert(<span class="hljs-string">`Lat: <span class="hljs-subst">$&#123;latitude&#125;</span>, Long: <span class="hljs-subst">$&#123;longitude&#125;</span>`</span>);
+&#125;
+navigator.geolocation.getCurrentPosition(successCallback);</code></pre>
 <p>Atau jika mau menggunakan Arrow Function juga bisa:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> successCallback = <span class="function">(<span class="params">geolocation</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;</span><br><span class="line">    </span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> successCallback = <span class="hljs-function">(<span class="hljs-params">geolocation</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;
+    
+    alert(<span class="hljs-string">`Lat: <span class="hljs-subst">$&#123;latitude&#125;</span>, Long: <span class="hljs-subst">$&#123;longitude&#125;</span>`</span>);
+&#125;
+navigator.geolocation.getCurrentPosition(successCallback);</code></pre>
 <p>Mau dibuat inline juga bisa:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(<span class="function"><span class="keyword">function</span>(<span class="params">geolocation</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;</span><br><span class="line"></span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">navigator.geolocation.getCurrentPosition(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">geolocation</span>)</span>&#123;
+    <span class="hljs-keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;
+
+    alert(<span class="hljs-string">`Lat: <span class="hljs-subst">$&#123;latitude&#125;</span>, Long: <span class="hljs-subst">$&#123;longitude&#125;</span>`</span>);
+&#125;)</code></pre>
 <p>Atau inline Arrow Function:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">navigator.geolocation.getCurrentPosition(<span class="function">(<span class="params">&#123;coords, timestamp&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = coords;</span><br><span class="line"></span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js">navigator.geolocation.getCurrentPosition(<span class="hljs-function">(<span class="hljs-params">&#123;coords, timestamp&#125;</span>) =&gt;</span> &#123;
+    <span class="hljs-keyword">let</span> &#123;latitude,longitude&#125; = coords;
+
+    alert(<span class="hljs-string">`Lat: <span class="hljs-subst">$&#123;latitude&#125;</span>, Long: <span class="hljs-subst">$&#123;longitude&#125;</span>`</span>);
+&#125;)</code></pre>
 <p>Dengan demikian Anda bisa mengambil latitude, longitude dari geolocation browser. Untuk parameter-parameter<br>lainnya juga dapat diambil namun tidak semua parameternya ada karena tidak setiap device memiliki sensor yang lengkap.</p>
 <p>Jika Anda sudah bisa mendapatkan latitude, longitude dari user, Anda dapat melakukan<br>integrasi dengan google maps, leaflet atau platform-platform lain yang dapat menampilkan<br>dan menggambarkan posisi user dalam maps. Ataupun mengolahnya dengan algoritma-algoritma yang Anda inginkan.</p>
 <h3 id="Error-Callback"><a href="#Error-Callback" class="headerlink" title="Error Callback"></a>Error Callback</h3><p>Fungsi ini dipanggil jika terdapat error dalam pengambilan data lokasi user. Banyak hal kemungkinannya, diantaranya<br>tidak mendapatkan izin user, fitur geolocation tidak ada di browser tersebut, timeout dll. Sederhananya, siapkan satu fungsi dengan satu parameter<br>yang digunakan untuk log / mengolah error yang terjadi. Seperti contoh dibawah ini:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">successCallback</span>(<span class="params">geolocation</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;</span><br><span class="line"></span><br><span class="line">    alert(<span class="string">`Lat: <span class="subst">$&#123;latitude&#125;</span>, Long: <span class="subst">$&#123;longitude&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">errorCallback</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.warn(<span class="string">`Terjadi Kesalahan (<span class="subst">$&#123;err.code&#125;</span>): <span class="subst">$&#123;err.message&#125;</span>`</span>)</span><br><span class="line">&#125;</span><br><span class="line">navigator.geolocation.getCurrentPosition(successCallback, errorCallback);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">successCallback</span>(<span class="hljs-params">geolocation</span>)</span>&#123;
+    <span class="hljs-keyword">let</span> &#123;latitude,longitude&#125; = geolocation.coords;
+
+    alert(<span class="hljs-string">`Lat: <span class="hljs-subst">$&#123;latitude&#125;</span>, Long: <span class="hljs-subst">$&#123;longitude&#125;</span>`</span>);
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">errorCallback</span>(<span class="hljs-params">err</span>)</span>&#123;
+    <span class="hljs-built_in">console</span>.warn(<span class="hljs-string">`Terjadi Kesalahan (<span class="hljs-subst">$&#123;err.code&#125;</span>): <span class="hljs-subst">$&#123;err.message&#125;</span>`</span>)
+&#125;
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);</code></pre>
 <h3 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h3><p>Terdapat opsi untuk mengatur pengambilan geolocation. Sesuai dokumentasi <a target="_blank" rel="noopener" href="https://w3c.github.io/geolocation-api/#position_options_interface">PositionOptions</a> terdapat<br>3 parameter yang dapat diatur:</p>
 <ol>
 <li>enableHighAccuracy : defaultnya false, boolean, mengatur tingkat akurasinya, semakin akurasi tinggi semakin membutuhkan waktu dan energi (terkait power saving)</li>
@@ -164,7 +193,9 @@
                             
                             
                                 <div class="columns is-mobile is-multiline article-nav">
-                <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+                <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+                    
+                        <a href="/2021/02/07/Menghemat-Listrik-dengan-Arduino/">Menghemat Listrik dengan Arduino / NodeMCU</a>
                     
                 </span>
                                     <span class="column is-12-mobile is-half-desktop  article-nav-next">
@@ -224,5 +255,6 @@
 
 
 <script async data-ad-client="ca-pub-7620612957607349" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" onerror="___()"></script>
+<script async src="/js/image.js"></script>
 </body>
 </html>
