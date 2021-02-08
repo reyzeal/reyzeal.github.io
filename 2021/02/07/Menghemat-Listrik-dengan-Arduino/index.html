@@ -89,7 +89,7 @@
                                     <span class="column is-narrow">
                                         
                                         
-                                        2 minutes read (About 344 words)
+                                        9 minutes read (About 1289 words)
                                         </span>
                                 
                             </div>
@@ -105,7 +105,272 @@
 <li>Pengecekan jam, apakah jam berada &gt;= jam 22 atau kurang &lt;= 5, jika iya dispenser mati, jika tidak maka dispenser hidup.</li>
 </ol>
 <p>Kemudian untuk susunan komponennya Saya buat seperti dibawah ini. Karena di software Fritzing tidak ada tampilan untuk AC Power, bagian battre 9V ini adalah ilustrasi dari listrik AC rumahan dengan LED adalah dispenser.<br><img src="/2021/02/07/Menghemat-Listrik-dengan-Arduino/sketch.png" alt="img"></p>
-<pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;NTPClient.h&gt;</span></span>
+<h3 id="Perhitungan-Biaya-Listrik"><a href="#Perhitungan-Biaya-Listrik" class="headerlink" title="Perhitungan Biaya Listrik"></a>Perhitungan Biaya Listrik</h3><table>
+<thead>
+<tr>
+<th>Golongan tarif listrik</th>
+<th>Batas daya</th>
+<th>Biaya pemakaian</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R-1/TR</td>
+<td>0 – 450 VA</td>
+<td>Rp 169/kWh</td>
+</tr>
+<tr>
+<td>R-1/TR</td>
+<td>451 – 900 VA</td>
+<td>Rp 274/kWh</td>
+</tr>
+<tr>
+<td>R-1M/TR</td>
+<td>451 – 900 VA</td>
+<td>Rp 1.352/kWh</td>
+</tr>
+<tr>
+<td>R-1/TR</td>
+<td>901 – 1.300 VA</td>
+<td>Rp 1.444,70/kWh</td>
+</tr>
+<tr>
+<td>R-1/TR</td>
+<td>1.301 – 2.200 VA</td>
+<td>Rp 1.444,70/kWh</td>
+</tr>
+<tr>
+<td>R-2/TR</td>
+<td>2.201 VA – 5.500 VA</td>
+<td>Rp 1.444,70/kWh</td>
+</tr>
+<tr>
+<td>R-3/TR</td>
+<td>&gt; 5.501 VA</td>
+<td>Rp 1.444,70/kWh</td>
+</tr>
+<tr>
+<td>B-1/TR</td>
+<td>0 – 450 VA</td>
+<td>Rp 254/kWh</td>
+</tr>
+<tr>
+<td>B-1/TR</td>
+<td>451 – 900 VA</td>
+<td>Rp 420/kWh</td>
+</tr>
+<tr>
+<td>B-1/TR</td>
+<td>901 – 1.300 VA</td>
+<td>Rp 966/kWh</td>
+</tr>
+<tr>
+<td>B-1/TR</td>
+<td>1.301 – 5.500 VA</td>
+<td>Rp 1.100/kWh</td>
+</tr>
+<tr>
+<td>B-2/TR</td>
+<td>5.501 VA – 200 kVA</td>
+<td>Rp 1.444,70/kWh</td>
+</tr>
+<tr>
+<td>B-3/TM</td>
+<td>&gt; 200 kVA</td>
+<td>Rp 1.114,74/kWh</td>
+</tr>
+<tr>
+<td>I-1/TR</td>
+<td>0 – 450 VA</td>
+<td>Rp 160/kWh</td>
+</tr>
+<tr>
+<td>I-1/TR</td>
+<td>450 – 900 VA</td>
+<td>Rp 315/kWh</td>
+</tr>
+<tr>
+<td>I-1/TR</td>
+<td>900 – 1.300 VA</td>
+<td>Rp 930/kWh</td>
+</tr>
+<tr>
+<td>I-1/TR</td>
+<td>1.301 – 2.200 VA</td>
+<td>Rp 960/kWh</td>
+</tr>
+<tr>
+<td>I-1/TR</td>
+<td>3.500 – 14.000 VA</td>
+<td>Rp 1.112/kWh</td>
+</tr>
+<tr>
+<td>I-2/TR</td>
+<td>14.001 – 200 kVA</td>
+<td>Rp 972/kWh</td>
+</tr>
+<tr>
+<td>I-3P/TM</td>
+<td>&gt; 200 kVA</td>
+<td>Rp 1.114,74/kWh</td>
+</tr>
+<tr>
+<td>I-3/TM</td>
+<td>&gt; 200 kVA</td>
+<td>Rp 1.114,74/kWh</td>
+</tr>
+<tr>
+<td>I-4/TT</td>
+<td>&gt; 2.000 kVA</td>
+<td>Rp 996,74/kWh</td>
+</tr>
+<tr>
+<td>P-1/TR</td>
+<td>0 – 450 VA</td>
+<td>Rp 575/kWh</td>
+</tr>
+<tr>
+<td>P-1/TR</td>
+<td>451 – 900 VA</td>
+<td>Rp 600/kWh</td>
+</tr>
+<tr>
+<td>P-1/TR</td>
+<td>1.300 VA</td>
+<td>Rp 1.049/kWh</td>
+</tr>
+<tr>
+<td>P-1/TR</td>
+<td>2.200 – 5.500 VA</td>
+<td>Rp 1.076/kWh</td>
+</tr>
+<tr>
+<td>P-1/TR</td>
+<td>5.501 – 200 kVA</td>
+<td>Rp 1.444,70/kWh</td>
+</tr>
+<tr>
+<td>P-2/TR</td>
+<td>&gt; 200 kVA</td>
+<td>Rp 1.035,78/kWh</td>
+</tr>
+</tbody></table>
+<p>Jika dispenser memiliki daya 300 watt, misalnya hidup tiap 20 menit sekali tiap jam (memanaskan/mendinginkan) dan sisanya dalam keadaan idle. Maka setiap hari waktu operasional dispenser sebanyak <code>20 x 24 = 480 menit atau 8 jam</code>. Kalau semisal biaya per kWh untuk 1300 VA sesuai tabel diatas adalah Rp 1444,70 maka biaya yang dikeluarkan untuk 8 jam operasional dispenser adalah Rp 3.467,28 per hari atau setara Rp 104.018,4. Dihitung dengan cara:</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">Daya</span> Harian :
+<span class="hljs-attribute">Wh</span> = <span class="hljs-number">300</span>W * <span class="hljs-number">8</span> jam = <span class="hljs-number">2400</span> Wh
+<span class="hljs-attribute">kWh</span> = <span class="hljs-number">2400</span>Wh / <span class="hljs-number">1000</span> = <span class="hljs-number">2</span>.<span class="hljs-number">4</span> kWh
+
+<span class="hljs-attribute">Daya</span> Bulanan (<span class="hljs-number">30</span> hari):
+<span class="hljs-attribute">kWh</span> = <span class="hljs-number">2</span>.<span class="hljs-number">4</span> * <span class="hljs-number">30</span> = <span class="hljs-number">72</span> kWh
+
+<span class="hljs-attribute">Biaya</span> = <span class="hljs-number">72</span>*<span class="hljs-number">1444</span>.<span class="hljs-number">7</span> = Rp <span class="hljs-number">104</span>.<span class="hljs-number">018</span>,<span class="hljs-number">4</span></code></pre>
+<p>Kalau kita gunakan metode ini, maka kita kurangi waktu operasionalnya dari 24 jam (operasional + idle) menjadi 16 jam. Hitungannya pun jadi lain:</p>
+<pre><code class="hljs apache"><span class="hljs-attribute">Diketahui</span>:
+<span class="hljs-attribute">Dispenser</span> <span class="hljs-number">300</span>W
+<span class="hljs-attribute">Operasional</span> <span class="hljs-number">20</span> menit / jam
+<span class="hljs-attribute">Waktu</span> total <span class="hljs-number">16</span> jam
+<span class="hljs-attribute">waktu</span> operasional : <span class="hljs-number">20</span> * <span class="hljs-number">16</span> = <span class="hljs-number">320</span> menit atau <span class="hljs-number">4</span> jam
+
+<span class="hljs-attribute">Daya</span> Harian :
+<span class="hljs-attribute">Wh</span> = <span class="hljs-number">300</span>W * <span class="hljs-number">4</span> jam = <span class="hljs-number">1200</span> Wh
+<span class="hljs-attribute">kWh</span> = <span class="hljs-number">1200</span>Wh / <span class="hljs-number">1000</span> = <span class="hljs-number">1</span>.<span class="hljs-number">2</span> kWh
+
+<span class="hljs-attribute">Daya</span> Bulanan (<span class="hljs-number">30</span> hari):
+<span class="hljs-attribute">kWh</span> = <span class="hljs-number">1</span>.<span class="hljs-number">2</span> * <span class="hljs-number">30</span> = <span class="hljs-number">36</span> kWh
+
+<span class="hljs-attribute">Biaya</span> = <span class="hljs-number">36</span>*<span class="hljs-number">1444</span>.<span class="hljs-number">7</span> = Rp <span class="hljs-number">52</span>.<span class="hljs-number">009</span>,<span class="hljs-number">2</span></code></pre>
+<p>Sesuai teoritis bisa menghemat 50% walaupun hanya mengurangi jam hidupnya dispenser dari 24 jam ke 16 jam saja.</p>
+<h3 id="Definisi-Library-dan-beberapa-Konstanta"><a href="#Definisi-Library-dan-beberapa-Konstanta" class="headerlink" title="Definisi Library dan beberapa Konstanta"></a>Definisi Library dan beberapa Konstanta</h3><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;NTPClient.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ESP8266WiFi.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;WiFiUdp.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span></code></pre>
+<p>Beberapa library yang dibutuhkan diantaranya <code>NTPClient</code> untuk sinkronisasi waktu, <code>ESP8266WiFi</code> untuk konektivitas dengan WiFi, <code>WiFiUdp</code> untuk koneksi protocol UDP, dan terakhir <code>math</code> untuk keperluan hitungan matematis.</p>
+<pre><code class="hljs arduino"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* ssid       = <span class="hljs-string">&quot;SSID WIFINYA&quot;</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* password   = <span class="hljs-string">&quot;PASSWORD WIFINYA&quot;</span>;</code></pre>
+<p>Konstanta diatas untuk koneksi ke WiFi.</p>
+<pre><code class="hljs arduino"><span class="hljs-keyword">const</span> <span class="hljs-keyword">long</span> utcOffsetInSeconds = <span class="hljs-number">3600</span>*<span class="hljs-number">7</span>; <span class="hljs-comment">// UTC+7 alias Asia/Jakarta</span>
+<span class="hljs-keyword">char</span> daysOfTheWeek[<span class="hljs-number">7</span>][<span class="hljs-number">12</span>] = &#123;<span class="hljs-string">&quot;Sunday&quot;</span>, <span class="hljs-string">&quot;Monday&quot;</span>, <span class="hljs-string">&quot;Tuesday&quot;</span>, <span class="hljs-string">&quot;Wednesday&quot;</span>, <span class="hljs-string">&quot;Thursday&quot;</span>, <span class="hljs-string">&quot;Friday&quot;</span>, <span class="hljs-string">&quot;Saturday&quot;</span>&#125;;
+<span class="hljs-comment">// Define NTP Client to get time</span>
+<span class="hljs-built_in">WiFiUDP</span> ntpUDP;
+<span class="hljs-function">NTPClient <span class="hljs-title">timeClient</span><span class="hljs-params">(ntpUDP, <span class="hljs-string">&quot;pool.ntp.org&quot;</span>, utcOffsetInSeconds)</span></span>;</code></pre>
+<p>Beberapa konstanta juga diperlukan untuk konfigurasi waktu/NTP. <code>utcOffsetInSeconds</code> adalah offset waktu dari UTC, karena Waktu Indonesia Barat berjarak 7 jam lebih awal dibandingkan UTC, maka kita hitung dengan 3600 (1 jam dalam detik) x 7. Untuk variabel <code>daysOfTheWeek</code> adalah array of string dari nama-nama hari dalam seminggu.</p>
+<pre><code class="hljs arduino"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> relay = <span class="hljs-number">5</span>;  <span class="hljs-comment">// NodeMCU v3 artinya di D1</span></code></pre>
+<p>Untuk konfigurasi Relay yang digunakan untuk saklar listriknya dapat diatur sesuai kebutuhan.</p>
+<h3 id="Bagian-Setup"><a href="#Bagian-Setup" class="headerlink" title="Bagian Setup"></a>Bagian Setup</h3><pre><code class="hljs arduino"><span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">begin</span>(<span class="hljs-number">115200</span>);
+<span class="hljs-built_in">WiFi</span>.<span class="hljs-built_in">begin</span>(ssid, password);</code></pre>
+<p>Konfigurasi supaya Serialnya sesuai Baudrate yang diinginkan. Atur wifi supaya bisa terkoneksi dengan jaringan yang sudah ditentukan.</p>
+<pre><code class="hljs arduino"><span class="hljs-keyword">while</span> ( <span class="hljs-built_in">WiFi</span>.status() != WL_CONNECTED ) &#123;
+  <span class="hljs-built_in">delay</span> ( <span class="hljs-number">500</span> );
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span> ( <span class="hljs-string">&quot;.&quot;</span> );
+&#125;
+timeClient.<span class="hljs-built_in">begin</span>();
+<span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);</code></pre>
+<p>Atur supaya arduino / nodemcu supaya menunggu sampai wifi terkoneksi. Jika sudah terkoneksi maka barulah <code>timeClient.begin()</code> yang merupakan NTPClient yang sudah kita atur sebelumnya. Intinya, jangan sampai inisialisasi NTP dilakukan sebelum wifi terkoneksi karena NTP memerlukan internet untuk mengambilnya dari pool server. Kemudian delay 1 detik supaya data dari NTP selesai terkirim.</p>
+<pre><code class="hljs arduino"><span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span> ( <span class="hljs-string">&quot;begin time verification&quot;</span> );
+<span class="hljs-keyword">int</span> verification = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span>(verification != timeClient.getHours())&#123;
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Verification value:&quot;</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(verification);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Now:&quot;</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(timeClient.getHours());
+  timeClient.update();
+  verification = round((verification + timeClient.getHours())/<span class="hljs-number">2.0</span>);
+&#125;
+<span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;OK!&quot;</span>);</code></pre>
+<p>Bagian ini memang tambahan dari saya. Terkadang proses sinkronisasi dengan NTP Server perlu waktu yang tidak menentu sehingga saya membuat algoritma untuk memverifikasi bahwa waktu lokal sudah tersinkronkan dengan waktu NTP server. Caranya cukup mudah yaitu menggunakan rata-rata dan pembulatan dari jam NTP.</p>
+<p>Lebih mudah jika kita misalkan waktu lokal / variabel <code>verification = 0</code> sedangkan waktu NTP menunjukkan pukul 18.00 yang artinya jamnya bernilai 18. Nilai iterasinya jadi seperti ini:</p>
+<table>
+<thead>
+<tr>
+<th>Iterasi</th>
+<th>Verification</th>
+<th>NTP</th>
+<th>round(rata-rata)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>0</td>
+<td>18</td>
+<td>9</td>
+</tr>
+<tr>
+<td>2</td>
+<td>9</td>
+<td>18</td>
+<td>14</td>
+</tr>
+<tr>
+<td>3</td>
+<td>14</td>
+<td>18</td>
+<td>16</td>
+</tr>
+<tr>
+<td>4</td>
+<td>16</td>
+<td>18</td>
+<td>17</td>
+</tr>
+<tr>
+<td>5</td>
+<td>17</td>
+<td>18</td>
+<td>18</td>
+</tr>
+</tbody></table>
+<h3 id="Bagian-Loop"><a href="#Bagian-Loop" class="headerlink" title="Bagian Loop"></a>Bagian Loop</h3><p>Interval Loop saya buat setiap 5 detik. Pada dasarnya, setiap kali loop hanya diperlukan 2 hal:</p>
+<p>a. Update waktu NTP</p>
+<p>Update waktu dapat dilakukan dengan memanggil method <code>update</code> pada variabel NTPClient yang sudah kita definisikan. Misalnya <code>timeClient.update();</code></p>
+<p>b. Pengecekan sekarang waktunya pas jam berapa?</p>
+<p>Ambil jam dengan method <code>getHours()</code>. Jika sudah, cocokan dengan logika yang Anda inginkan. Saya membuat supaya dispenser mati ketika sudah jam 22.00 sampai pukul 05.59 dengan cara ini:</p>
+<pre><code class="hljs arduino"><span class="hljs-keyword">int</span> jam =timeClient.getHours();
+<span class="hljs-keyword">if</span>(jam &gt;= <span class="hljs-number">22</span> || jam &lt;= <span class="hljs-number">5</span>)&#123;
+  <span class="hljs-built_in">pinMode</span>(relay, <span class="hljs-literal">INPUT</span>); <span class="hljs-comment">// mati</span>
+&#125;<span class="hljs-keyword">else</span>&#123;
+  <span class="hljs-built_in">pinMode</span>(relay, <span class="hljs-literal">OUTPUT</span>); <span class="hljs-comment">// hidup</span>
+&#125;</code></pre>
+<p>Code diatas untuk NodeMCU sedangkan untuk Arduino gunakan <code>pinMode(relay, OUTPUT)</code> di fungsi setup dan atur hidup-matinya dengan <code>digitalWrite(relay, LOW)</code> untuk mati dan <code>digitalWrite(relay, HIGH)</code> untuk hidup. </p>
+<h3 id="Kode-lengkapnya"><a href="#Kode-lengkapnya" class="headerlink" title="Kode lengkapnya:"></a>Kode lengkapnya:</h3><h4 id="NodeMCU"><a href="#NodeMCU" class="headerlink" title="NodeMCU"></a>NodeMCU</h4><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;NTPClient.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ESP8266WiFi.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;WiFiUdp.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
@@ -160,6 +425,63 @@
   &#125;
   <span class="hljs-built_in">delay</span>(<span class="hljs-number">5000</span>);
 &#125;</code></pre>
+<h4 id="Arduino"><a href="#Arduino" class="headerlink" title="Arduino"></a>Arduino</h4><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;NTPClient.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ESP8266WiFi.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;WiFiUdp.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* ssid       = <span class="hljs-string">&quot;SSID WIFINYA&quot;</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* password   = <span class="hljs-string">&quot;PASSWORD WIFINYA&quot;</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">long</span> utcOffsetInSeconds = <span class="hljs-number">3600</span>*<span class="hljs-number">7</span>; <span class="hljs-comment">// UTC+7 alias Asia/Jakarta</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> relay = <span class="hljs-number">5</span>;  <span class="hljs-comment">// NodeMCU v3 artinya di D1</span>
+<span class="hljs-keyword">char</span> daysOfTheWeek[<span class="hljs-number">7</span>][<span class="hljs-number">12</span>] = &#123;<span class="hljs-string">&quot;Sunday&quot;</span>, <span class="hljs-string">&quot;Monday&quot;</span>, <span class="hljs-string">&quot;Tuesday&quot;</span>, <span class="hljs-string">&quot;Wednesday&quot;</span>, <span class="hljs-string">&quot;Thursday&quot;</span>, <span class="hljs-string">&quot;Friday&quot;</span>, <span class="hljs-string">&quot;Saturday&quot;</span>&#125;;
+<span class="hljs-comment">// Define NTP Client to get time</span>
+<span class="hljs-built_in">WiFiUDP</span> ntpUDP;
+<span class="hljs-function">NTPClient <span class="hljs-title">timeClient</span><span class="hljs-params">(ntpUDP, <span class="hljs-string">&quot;pool.ntp.org&quot;</span>, utcOffsetInSeconds)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>&#123;
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">begin</span>(<span class="hljs-number">115200</span>);
+  
+  <span class="hljs-built_in">WiFi</span>.<span class="hljs-built_in">begin</span>(ssid, password);
+
+  <span class="hljs-keyword">while</span> ( <span class="hljs-built_in">WiFi</span>.status() != WL_CONNECTED ) &#123;
+    <span class="hljs-built_in">delay</span> ( <span class="hljs-number">500</span> );
+    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span> ( <span class="hljs-string">&quot;.&quot;</span> );
+  &#125;
+  timeClient.<span class="hljs-built_in">begin</span>();
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span> ( <span class="hljs-string">&quot;begin time verification&quot;</span> );
+  <span class="hljs-keyword">int</span> verification = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">while</span>(verification != timeClient.getHours())&#123;
+    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Verification value:&quot;</span>);
+    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(verification);
+    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Now:&quot;</span>);
+    <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(timeClient.getHours());
+    timeClient.update();
+    verification = round((verification + timeClient.getHours())/<span class="hljs-number">2.0</span>);
+  &#125;
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;OK!&quot;</span>);
+  <span class="hljs-built_in">pinMode</span>(relay, <span class="hljs-literal">OUTPUT</span>);
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>&#123;
+  timeClient.update();
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>();
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(daysOfTheWeek[timeClient.getDay()]);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;, &quot;</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(timeClient.getHours());
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;:&quot;</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(timeClient.getMinutes());
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;:&quot;</span>);
+  <span class="hljs-built_in">Serial</span>.<span class="hljs-built_in">println</span>(timeClient.getSeconds());
+  <span class="hljs-keyword">int</span> jam =timeClient.getHours();
+  <span class="hljs-keyword">if</span>(jam &gt;= <span class="hljs-number">22</span> || jam &lt;= <span class="hljs-number">5</span>)&#123;
+    <span class="hljs-built_in">digitalWrite</span>(relay, <span class="hljs-literal">LOW</span>);
+  &#125;<span class="hljs-keyword">else</span>&#123;
+    <span class="hljs-built_in">digitalWrite</span>(relay, <span class="hljs-literal">HIGH</span>)
+  &#125;
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">5000</span>);
+&#125;</code></pre>
+<p>Semoga Bermanfaat</p>
 
                                 
                             </div>
