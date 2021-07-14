@@ -73,6 +73,7 @@ $(document).on('click', '.navbar-toggler', function() {
     }
 
     $('html').addClass('nav-open');
+    $("#navbar").addClass("show text-dark");
     materialKit.misc.navbar_menu_visible = 1;
   }
 });
