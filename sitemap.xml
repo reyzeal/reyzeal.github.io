@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+        <loc>https://reyzeal.com/2021/02/07/Menghemat-Listrik-dengan-Arduino/</loc>
+        
+        <lastmod>2021-07-14</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/2020/06/29/menggunakan-restful-put-patch-delete-php/</loc>
+        
+        <lastmod>2021-07-14</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/2020/09/06/gratis-layanan-firebase/</loc>
+        
+        <lastmod>2021-07-14</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/2021/02/01/mengambil-lokasi-user-di-browser/</loc>
+        
+        <lastmod>2021-07-14</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/2020/07/01/gratis-cloud-database-menggunakan-mongoDB/</loc>
+        
+        <lastmod>2021-07-14</lastmod>
+        
+    </url>
+    
+
+    <url>
+        <loc>https://reyzeal.com/</loc>
+        <lastmod>2021-07-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+</urlset>
