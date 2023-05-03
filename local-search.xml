@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Pengaturan Puppeteer di VM GCP</title>
+    <link href="/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/"/>
+    <url>/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/</url>
+    
+    <content type="html"><![CDATA[<p>Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya berjalan normal dilokal PC. Masalah justru muncul ketika implementasi ke server yang mana masalah utamanya adalah beda environment.</p><p>Beberapa faktor saat implementasi di server:</p><ol><li>Server tidak memiliki display monitor, sehingga perlu membuat virtual display</li><li>Driver&#x2F;Library yang dibutuhkan untuk keperluan display sistem</li><li>Spesifikasi server yang kurang mumpuni, biasanya sih RAMnya</li></ol><h2 id="Konfigurasi-Display-di-Compute-Engine-GCP"><a href="#Konfigurasi-Display-di-Compute-Engine-GCP" class="headerlink" title="Konfigurasi Display di Compute Engine GCP"></a>Konfigurasi Display di Compute Engine GCP</h2><p><img src="/images/pengaturan_gcp_1.png" alt="Display Device harus dicentang"><br>Pastikan Display Device sudah tercentang. Apabila belum, perlu menghentikan VM kemudian edit dan nyalakan ulang.</p><h2 id="Ubuntu-Server-Driver-yang-dibutuhkan"><a href="#Ubuntu-Server-Driver-yang-dibutuhkan" class="headerlink" title="(Ubuntu Server) Driver yang dibutuhkan"></a>(Ubuntu Server) Driver yang dibutuhkan</h2><p>Ada beberapa library yang perlu diinstal untuk ubuntu server.</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> apt-get install -y gconf-service libasound2 libatk1.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libc6 libcairo2 libcups2 libdbus-<span class="hljs-number">1</span>-<span class="hljs-number">3</span> libexpat1 libfontconfig1 libgcc1 libgconf-<span class="hljs-number">2</span>-<span class="hljs-number">4</span> libgdk-pixbuf2.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libglib2.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libgtk-<span class="hljs-number">3</span>-<span class="hljs-number">0</span> libnspr4 libpango-<span class="hljs-number">1</span>.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libpangocairo-<span class="hljs-number">1</span>.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libstdc++<span class="hljs-number">6</span> libx11-<span class="hljs-number">6</span> libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget libgbm-dev<br></code></pre></td></tr></table></figure><h2 id="Spesifikasi-Server"><a href="#Spesifikasi-Server" class="headerlink" title="Spesifikasi Server"></a>Spesifikasi Server</h2><p>Biasanya untuk running 1 skrip membutuhkan minimal 300 MB, hal ini dikarenakan puppeteer perlu menjalankan browser meskipun berjalan secara headless. Asalkan 1 VM diperuntukkan khusus untuk 1 skrip automation, jenis machine <code>e2-micro</code> cukup kuat.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>puppeteer</tag>
+      
+      <tag>automation</tag>
+      
+      <tag>virtual machine</tag>
+      
+      <tag>cloud</tag>
+      
+      <tag>google cloud platform</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
