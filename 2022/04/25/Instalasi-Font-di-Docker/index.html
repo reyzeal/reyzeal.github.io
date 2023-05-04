@@ -16,28 +16,27 @@
   <meta name="author" content="Rey">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya b">
+    <meta name="description" content="Ada kalanya suatu service &#x2F; docker membutuhkan font dalam operasinya. Contohnya untuk service yang menangani template dokumen atau generate dokumen. Saya menjumpai kasus yang mana harus membuat micros">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pengaturan Puppeteer di VM GCP">
-<meta property="og:url" content="https://reyzeal.com/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/index.html">
+<meta property="og:title" content="Instalasi Font di Docker">
+<meta property="og:url" content="https://reyzeal.com/2022/04/25/Instalasi-Font-di-Docker/index.html">
 <meta property="og:site_name" content="Reyzeal">
-<meta property="og:description" content="Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya b">
+<meta property="og:description" content="Ada kalanya suatu service &#x2F; docker membutuhkan font dalam operasinya. Contohnya untuk service yang menangani template dokumen atau generate dokumen. Saya menjumpai kasus yang mana harus membuat micros">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://reyzeal.com/images/pengaturan_gcp_1.png">
-<meta property="article:published_time" content="2023-05-03T14:45:55.000Z">
-<meta property="article:modified_time" content="2023-05-03T15:08:33.100Z">
+<meta property="article:published_time" content="2022-04-25T12:01:03.000Z">
+<meta property="article:modified_time" content="2023-05-04T22:39:04.667Z">
 <meta property="article:author" content="Rey">
-<meta property="article:tag" content="puppeteer">
-<meta property="article:tag" content="automation">
-<meta property="article:tag" content="virtual machine">
 <meta property="article:tag" content="cloud">
-<meta property="article:tag" content="google cloud platform">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="dockerfile">
+<meta property="article:tag" content="google cloud run">
+<meta property="article:tag" content="font">
+<meta property="article:tag" content="service">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://reyzeal.com/images/pengaturan_gcp_1.png">
   
   
   
-  <title>Pengaturan Puppeteer di VM GCP - Reyzeal</title>
+  <title>Instalasi Font di Docker - Reyzeal</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -166,7 +165,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Pengaturan Puppeteer di VM GCP"></span>
+            <span id="subtitle" data-typed-text="Instalasi Font di Docker"></span>
           
         </div>
 
@@ -177,8 +176,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-03 21:45" pubdate>
-          May 3, 2023 pm
+        <time datetime="2022-04-25 19:01" pubdate>
+          April 25, 2022 pm
         </time>
       </span>
     
@@ -189,7 +188,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k words
+          2.5k words
         
       </span>
     
@@ -200,7 +199,7 @@
         
         
         
-          12 mins
+          21 mins
         
       </span>
     
@@ -238,24 +237,42 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Pengaturan Puppeteer di VM GCP</h1>
+            <h1 style="display: none">Instalasi Font di Docker</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya berjalan normal dilokal PC. Masalah justru muncul ketika implementasi ke server yang mana masalah utamanya adalah beda environment.</p>
-<p>Beberapa faktor saat implementasi di server:</p>
-<ol>
-<li>Server tidak memiliki display monitor, sehingga perlu membuat virtual display</li>
-<li>Driver&#x2F;Library yang dibutuhkan untuk keperluan display sistem</li>
-<li>Spesifikasi server yang kurang mumpuni, biasanya sih RAMnya</li>
-</ol>
-<h2 id="Konfigurasi-Display-di-Compute-Engine-GCP"><a href="#Konfigurasi-Display-di-Compute-Engine-GCP" class="headerlink" title="Konfigurasi Display di Compute Engine GCP"></a>Konfigurasi Display di Compute Engine GCP</h2><p><img src="/images/pengaturan_gcp_1.png" srcset="/img/loading.gif" lazyload alt="Display Device harus dicentang"><br>Pastikan Display Device sudah tercentang. Apabila belum, perlu menghentikan VM kemudian edit dan nyalakan ulang.</p>
-<h2 id="Ubuntu-Server-Driver-yang-dibutuhkan"><a href="#Ubuntu-Server-Driver-yang-dibutuhkan" class="headerlink" title="(Ubuntu Server) Driver yang dibutuhkan"></a>(Ubuntu Server) Driver yang dibutuhkan</h2><p>Ada beberapa library yang perlu diinstal untuk ubuntu server.</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> apt-get install -y gconf-service libasound2 libatk1.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libc6 libcairo2 libcups2 libdbus-<span class="hljs-number">1</span>-<span class="hljs-number">3</span> libexpat1 libfontconfig1 libgcc1 libgconf-<span class="hljs-number">2</span>-<span class="hljs-number">4</span> libgdk-pixbuf2.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libglib2.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libgtk-<span class="hljs-number">3</span>-<span class="hljs-number">0</span> libnspr4 libpango-<span class="hljs-number">1</span>.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libpangocairo-<span class="hljs-number">1</span>.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libstdc++<span class="hljs-number">6</span> libx11-<span class="hljs-number">6</span> libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget libgbm-dev<br></code></pre></td></tr></table></figure>
+                <p>Ada kalanya suatu service / docker membutuhkan font dalam operasinya. Contohnya untuk service yang menangani template dokumen atau generate dokumen. Saya menjumpai kasus yang mana harus membuat microservice untuk download PDF dari template DOCX yang sudah disiapkan sebelumnya. Alhasil, tidak hanya dokumen saja, font-font yang digunakan dalam dokumen tersebut juga perlu disiapkan dalam environment server. Lalu, bagaimana cara instalasinya?</p>
 
-<h2 id="Spesifikasi-Server"><a href="#Spesifikasi-Server" class="headerlink" title="Spesifikasi Server"></a>Spesifikasi Server</h2><p>Biasanya untuk running 1 skrip membutuhkan minimal 300 MB, hal ini dikarenakan puppeteer perlu menjalankan browser meskipun berjalan secara headless. Asalkan 1 VM diperuntukkan khusus untuk 1 skrip automation, jenis machine <code>e2-micro</code> cukup kuat.</p>
+<p>Dalam kasus ini, saya menggunakan dockerfile untuk menyiapkan service di Google Cloud Run. Mungkin kalau ada yang menggunakan platform lain ada perbedaan teknis / flownya. Selama Operating System yang digunakan dalam docker tersebut berjenis linux, Saya kira tulisan ini masih relevan untuk dijadikan referensi.</p>
 
+<p>Ok untuk instalasi font di docker, kita bagi menjadi beberapa section. Pertama, kita mencoba menggunakan manual installation. Kedua, kita mencoba menggunakan package manager. Ketiga, kita bisa juga menggunakan docker repository yang telah siap untuk digunakan.</p>
+
+<h2 id="Manual-Installation"><a href="#Manual-Installation" class="headerlink" title="Manual Installation"></a>Manual Installation</h2><p>Pada dasarnya sama dengan instalasi font pada Linux. Yaitu meletakan file <strong>*.ttf</strong> dan sejenisnya di folder `<code>/usr/share/fonts/</code>`. Sudah itu aja sih. Berikut ini contohnya:</p>
+
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> alpine:latest<br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> /path/from/project/fonts.ttf /usr/share/fonts/</span><br></code></pre></td></tr></table></figure>
+<p>Selama file *<a href=\"https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0\">.</a>ttf diletakkan dalam folder <code>/usr/share/fonts/ </code>maka service tersebut dapat menggunakan resource font tersebut. Terlepas diletakkan secara cuma-cuma ataupun disimpan dalam subfolder dan terpisah-pisah.</p>
+
+<h2 id="Package-Manager"><a href="#Package-Manager" class="headerlink" title="Package Manager"></a>Package Manager</h2><p>Semisal Anda menggunakan package manager maka harus bisa memastikan fontnya tersedia. Menurut <a href=\"https://wiki.alpinelinux.org/wiki/Fonts\">dokumentasi</a> dari alpine tentang font kita bisa menginstall font dengan cara:</p>
+
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> alpine:latest<br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> apk add terminus-font ttf-inconsolata ttf-dejavu font-bitstream-* font-noto font-noto-* ttf-font-awesome font-noto-extra</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Docker-Repository"><a href="#Docker-Repository" class="headerlink" title="Docker Repository"></a>Docker Repository</h2><p>Untuk docker repository ini ada dua pilihan. Menggunakan yang sudah ada, atau membuat repository sendiri. Tapi, ini yang saya contohkan yang tinggal pakai saja. Misalnya kita menggunakan dockernya milik <code>deemetreeats11/alpine-google-fonts</code> yang mana memuat beberapa google fonts (Roboto, Open Sans, Lato, dan Montserrat) semisal:</p>
+
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> deemetreeats11/alpine-google-fonts AS font_supply<br><br><span class="hljs-comment"># Kemudian kita pakai di stage berikutnya</span><br><span class="hljs-keyword">FROM</span> alpine:edge AS runtime<br><br><span class="hljs-comment"># ini kuncinya:</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> --from=font_supply /usr/share/fonts/ /usr/share/fonts/</span><br></code></pre></td></tr></table></figure>
+<p>Okay, mungkin itu saja yang bisa saya dokumentasikan. Ini hanya sekelumit contoh tentang bagaimana memasangkan font di Linux Environment. Semoga bermanfaat.</p>
+
+<h3 id="Daftar-Links"><a href="#Daftar-Links" class="headerlink" title="Daftar Links"></a>Daftar Links</h3><p>
+    <a href=\"https://hub.docker.com/r/deemetreeats11/alpine-google-fonts\" rel="nofollow">
+        https://hub.docker.com/r/deemetreeats11/alpine-google-fonts
+    </a><br>
+    <a href=\"https://wiki.alpinelinux.org/wiki/Fonts\" rel="nofollow">
+        https://wiki.alpinelinux.org/wiki/Fonts
+    </a><br>
+    <a href=\"https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0\" rel="nofollow">
+        https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0
+    </a>
+</p>
                 
               </div>
             
@@ -267,15 +284,17 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/puppeteer/">#puppeteer</a>
-      
-        <a href="/tags/automation/">#automation</a>
-      
-        <a href="/tags/virtual-machine/">#virtual machine</a>
-      
         <a href="/tags/cloud/">#cloud</a>
       
-        <a href="/tags/google-cloud-platform/">#google cloud platform</a>
+        <a href="/tags/docker/">#docker</a>
+      
+        <a href="/tags/dockerfile/">#dockerfile</a>
+      
+        <a href="/tags/google-cloud-run/">#google cloud run</a>
+      
+        <a href="/tags/font/">#font</a>
+      
+        <a href="/tags/service/">#service</a>
       
     </div>
   
@@ -287,8 +306,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Pengaturan Puppeteer di VM GCP</div>
-      <div>https://reyzeal.com/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/</div>
+      <div>Instalasi Font di Docker</div>
+      <div>https://reyzeal.com/2022/04/25/Instalasi-Font-di-Docker/</div>
     </div>
     <div class="license-meta">
       
@@ -300,7 +319,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 3, 2023</div>
+          <div>April 25, 2022</div>
         </div>
       
       
@@ -332,21 +351,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/04/Kunci-Katla/" title="Kunci Katla">
+                      <a href="/2022/04/26/Konfigurasi-Docker-PHP-untuk-Google-Cloud-Run/" title="Konfigurasi Docker PHP untuk Google Cloud Run">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Kunci Katla</span>
+                        <span class="hidden-mobile">Konfigurasi Docker PHP untuk Google Cloud Run</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2022/04/26/Konfigurasi-Docker-PHP-untuk-Google-Cloud-Run/" title="Konfigurasi Docker PHP untuk Google Cloud Run">
-                        <span class="hidden-mobile">Konfigurasi Docker PHP untuk Google Cloud Run</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
