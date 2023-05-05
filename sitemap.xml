@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+        <loc>https://reyzeal.com/2022/04/26/Konfigurasi-Docker-PHP-untuk-Google-Cloud-Run/</loc>
+        
+        <lastmod>2023-05-04</lastmod>
+        
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/2022/04/25/Instalasi-Font-di-Docker/</loc>
+        
+        <lastmod>2023-05-04</lastmod>
+        
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/2023/05/04/Kunci-Katla/</loc>
+        
+        <lastmod>2023-05-04</lastmod>
+        
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/</loc>
+        
+        <lastmod>2023-05-03</lastmod>
+        
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+
+    <url>
+        <loc>https://reyzeal.com/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    
+    <url>
+        <loc>https://reyzeal.com/tags/puppeteer/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/automation/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/virtual-machine/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/cloud/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/google-cloud-platform/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/katla/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/kriptografi/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/hack/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/hash/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/encryption/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/base64/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/docker/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/dockerfile/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/google-cloud-run/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/font/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/service/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/php/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/webservice/</loc>
+        <lastmod>2023-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+
+    
+</urlset>
