@@ -16,28 +16,30 @@
   <meta name="author" content="Rey">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya b">
+    <meta name="description" content="Cloud Run merupakan layanan komputasi serverless berbasis container yang disediakan oleh Google. Ada dua kunci utama dari cloud run yaitu serverless dan container. Serverless berarti kita sebagai peng">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pengaturan Puppeteer di VM GCP">
-<meta property="og:url" content="https://reyzeal.com/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/index.html">
+<meta property="og:title" content="Konfigurasi Docker Nodejs untuk Google Cloud Run">
+<meta property="og:url" content="https://reyzeal.com/2023/04/28/Konfigurasi-Docker-Nodejs-untuk-Google-Cloud-Run/index.html">
 <meta property="og:site_name" content="Reyzeal">
-<meta property="og:description" content="Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya b">
+<meta property="og:description" content="Cloud Run merupakan layanan komputasi serverless berbasis container yang disediakan oleh Google. Ada dua kunci utama dari cloud run yaitu serverless dan container. Serverless berarti kita sebagai peng">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://reyzeal.com/images/pengaturan_gcp_1.png">
-<meta property="article:published_time" content="2023-05-03T14:45:55.000Z">
-<meta property="article:modified_time" content="2023-05-03T15:08:33.100Z">
+<meta property="og:image" content="https://storage.googleapis.com/stateless-reyzeal-com/2022/04/d06a4427-image.png">
+<meta property="og:image" content="https://storage.googleapis.com/stateless-reyzeal-com/2022/04/b4f65616-image.png">
+<meta property="og:image" content="https://storage.googleapis.com/stateless-reyzeal-com/2022/04/a9acdc32-image.png">
+<meta property="article:published_time" content="2023-04-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-06T07:16:33.879Z">
 <meta property="article:author" content="Rey">
-<meta property="article:tag" content="puppeteer">
-<meta property="article:tag" content="automation">
-<meta property="article:tag" content="virtual machine">
 <meta property="article:tag" content="cloud">
-<meta property="article:tag" content="google cloud platform">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="dockerfile">
+<meta property="article:tag" content="webservice">
+<meta property="article:tag" content="nodejs">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://reyzeal.com/images/pengaturan_gcp_1.png">
+<meta name="twitter:image" content="https://storage.googleapis.com/stateless-reyzeal-com/2022/04/d06a4427-image.png">
   
   
   
-  <title>Reyzeal | Pengaturan Puppeteer di VM GCP - Reyzeal</title>
+  <title>Reyzeal | Konfigurasi Docker Nodejs untuk Google Cloud Run - Reyzeal</title>
   <meta name="title" content="Musafir Kehidupan">
 
   <meta property="og:type" content="website">
@@ -179,7 +181,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Pengaturan Puppeteer di VM GCP"></span>
+            <span id="subtitle" data-typed-text="Konfigurasi Docker Nodejs untuk Google Cloud Run"></span>
           
         </div>
 
@@ -190,8 +192,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-03 21:45" pubdate>
-          May 3, 2023 pm
+        <time datetime="2023-04-28 23:00" pubdate>
+          April 28, 2023 pm
         </time>
       </span>
     
@@ -202,7 +204,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k words
+          3.5k words
         
       </span>
     
@@ -213,7 +215,7 @@
         
         
         
-          12 mins
+          29 mins
         
       </span>
     
@@ -251,23 +253,178 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Pengaturan Puppeteer di VM GCP</h1>
+            <h1 style="display: none">Konfigurasi Docker Nodejs untuk Google Cloud Run</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya berjalan normal dilokal PC. Masalah justru muncul ketika implementasi ke server yang mana masalah utamanya adalah beda environment.</p>
-<p>Beberapa faktor saat implementasi di server:</p>
-<ol>
-<li>Server tidak memiliki display monitor, sehingga perlu membuat virtual display</li>
-<li>Driver&#x2F;Library yang dibutuhkan untuk keperluan display sistem</li>
-<li>Spesifikasi server yang kurang mumpuni, biasanya sih RAMnya</li>
-</ol>
-<h2 id="Konfigurasi-Display-di-Compute-Engine-GCP"><a href="#Konfigurasi-Display-di-Compute-Engine-GCP" class="headerlink" title="Konfigurasi Display di Compute Engine GCP"></a>Konfigurasi Display di Compute Engine GCP</h2><p><img src="/images/pengaturan_gcp_1.png" srcset="/img/loading.gif" lazyload alt="Display Device harus dicentang"><br>Pastikan Display Device sudah tercentang. Apabila belum, perlu menghentikan VM kemudian edit dan nyalakan ulang.</p>
-<h2 id="Ubuntu-Server-Driver-yang-dibutuhkan"><a href="#Ubuntu-Server-Driver-yang-dibutuhkan" class="headerlink" title="(Ubuntu Server) Driver yang dibutuhkan"></a>(Ubuntu Server) Driver yang dibutuhkan</h2><p>Ada beberapa library yang perlu diinstal untuk ubuntu server.</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> apt-get install -y gconf-service libasound2 libatk1.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libc6 libcairo2 libcups2 libdbus-<span class="hljs-number">1</span>-<span class="hljs-number">3</span> libexpat1 libfontconfig1 libgcc1 libgconf-<span class="hljs-number">2</span>-<span class="hljs-number">4</span> libgdk-pixbuf2.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libglib2.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libgtk-<span class="hljs-number">3</span>-<span class="hljs-number">0</span> libnspr4 libpango-<span class="hljs-number">1</span>.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libpangocairo-<span class="hljs-number">1</span>.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libstdc++<span class="hljs-number">6</span> libx11-<span class="hljs-number">6</span> libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget libgbm-dev<br></code></pre></td></tr></table></figure>
+                <p>Cloud Run merupakan layanan komputasi serverless berbasis container yang disediakan oleh Google. Ada dua kunci utama dari cloud run yaitu serverless dan container. Serverless berarti kita sebagai pengguna tidak perlu melakukan penyediaan, konfigurasi, dan pengelolaan server. Karena berbasis container, maka kita hanya perlu mengatur environment container tersebut dengan dockerfile. Lalu bagaimana kita melakukan konfigurasi dockerfile nodejs?</p>
 
-<h2 id="Spesifikasi-Server"><a href="#Spesifikasi-Server" class="headerlink" title="Spesifikasi Server"></a>Spesifikasi Server</h2><p>Biasanya untuk running 1 skrip membutuhkan minimal 300 MB, hal ini dikarenakan puppeteer perlu menjalankan browser meskipun berjalan secara headless. Asalkan 1 VM diperuntukkan khusus untuk 1 skrip automation, jenis machine <code>e2-micro</code> cukup kuat.</p>
+
+
+
+
+<span id="more"></span>
+
+
+
+
+
+<p>Oiya, sebenarnya untuk dockerfile ini bisa berlaku universal di platform manapun. Namun dalam kasus ini saya menggunakan studi kasus di Google Cloud Run. Sehingga untuk beberapa teknis saya sesuaikan dengan dokumentasi dan arahan dari Google Cloud Platform.</p>
+
+
+
+
+
+<p>Sebelum kita mulai membahas dockerfilenya, kita coba bagi menjadi dua section. Pertama, kita coba gunakan dockerfile yang ada dari dokumentasi original dari Node. Kemudian melakukan adjustment agar sesuai dengan environment GCP.</p>
+
+
+
+
+
+<h3>Server.js</h3>
+
+
+
+
+
+<p>Dengan asumsi kita memiliki entrypoint di script bernama server.js:</p>
+
+
+
+
+
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">const express = require(<span class="hljs-string">&#x27;express&#x27;</span>);<br><br>// Konstanta<br>const PORT = <span class="hljs-number">8080</span>;<br>const HOST = <span class="hljs-string">&#x27;0.0.0.0&#x27;</span>;<br><br>// Webservice<br>const app = express();<br>app.get(<span class="hljs-string">&#x27;/&#x27;</span>, (req, res) =&gt; &#123;<br>  res.send(<span class="hljs-string">&#x27;Hello World&#x27;</span>);<br>&#125;);<br><br>app.listen(PORT, HOST);<br>console.log(`Running on http://$&#123;HOST&#125;:$&#123;PORT&#125;`);<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2>Dockerfile Nodejs</h2>
+
+
+
+
+
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">16</span><br><br><span class="hljs-comment"># Path yang dijadikan direktori utama app ini</span><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /usr/src/app</span><br><br><span class="hljs-comment"># Menyalin package.json dan package-lock.json</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> package*.json ./</span><br><br><span class="hljs-keyword">RUN</span><span class="language-bash"> npm install</span><br><span class="hljs-comment"># Melakukan instalasi library yang dibutuhkan</span><br><span class="hljs-comment"># gunakan line bawah ini untuk versi production</span><br><span class="hljs-comment"># RUN npm ci --only=production</span><br><br><span class="hljs-comment"># menyalin script app</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> . .</span><br><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">8080</span><br><span class="hljs-keyword">CMD</span><span class="language-bash"> &amp;<span class="hljs-comment">#91; &quot;node&quot;, &quot;server.js&quot; ]</span></span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2>Penyesuaian dengan Environment GCR/GCP</h2>
+
+
+
+
+
+<p>Ada dua hal yang perlu diperhatikan dalam melakukan deployment dockerfile di GCR. Pertama, environment variables yang perlu kita cermati karena ada beberapa nama yang sudah digunakan oleh GCP. Kedua, masalah networking terutama port.</p>
+
+
+
+
+
+<figure class="wp-block-image size-full">
+<img src="https://storage.googleapis.com/stateless-reyzeal-com/2022/04/d06a4427-image.png" srcset="/img/loading.gif" lazyload alt="" class="wp-image-146"/>
+</figure>
+
+
+
+
+
+<p>Sebaiknya konstanta yang berkaitan dengan port menggunakan environment variable dari GCR dan memberi default value agar tidak bernilai salah ketika environment variablenya tidak diisi. Seperti ini misalnya:</p>
+
+
+
+
+
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">// server.js<br><br>const express = require(<span class="hljs-string">&#x27;express&#x27;</span>);<br><br>// Konstanta<br>const PORT = process.<span class="hljs-keyword">env</span>.PORT || <span class="hljs-number">8080</span>;<br>const HOST = <span class="hljs-string">&#x27;0.0.0.0&#x27;</span>;<br><br>// Webservice<br>const app = express();<br>app.get(<span class="hljs-string">&#x27;/&#x27;</span>, (req, res) =&gt; &#123;<br>  res.send(<span class="hljs-string">&#x27;Hello World&#x27;</span>);<br>&#125;);<br><br>app.listen(PORT, HOST);<br>console.log(`Running on http://$&#123;HOST&#125;:$&#123;PORT&#125;`);<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Deploy ke GCR bisa dilakukan secara interactive dengan gcloud cli:</p>
+
+
+
+
+
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile">gcloud <span class="hljs-keyword">run</span><span class="language-bash"> deploy</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Kita bisa menggunakan Google Cloud Build sehingga hasil imagenya dapat disimpan dan digunakan untuk deploy instance GCR.</p>
+
+
+
+
+
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment"># untuk build</span><br>gcloud builds submit --tag asia.gcr.io/PROJECT-ID/IMAGE-NAME:VERSION<br><br><span class="hljs-comment"># untuk deploy ke GCR</span><br>gcloud <span class="hljs-keyword">run</span><span class="language-bash"> deploy --image asia.gcr.io/PROJECT-ID/IMAGE-NAME:VERSION --allow-unauthenticated --region asia-southeast1 NAMA_INSTANCE_GCR</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h3>Tips</h3>
+
+
+
+
+
+<p>Pilih node image yang lebih kecil jika merasa hasil imagenya terlalu besar. Misalnya untuk image <code>node:16</code> menghasilkan 3048 MB.</p>
+
+
+
+
+
+<figure class="wp-block-image size-full"><img src="https://storage.googleapis.com/stateless-reyzeal-com/2022/04/b4f65616-image.png" srcset="/img/loading.gif" lazyload alt="" class="wp-image-147"/></figure>
+
+
+
+
+
+<p>Sedangkan untuk <code>node:16-alpine</code> menghasilkan 1992 MB.</p>
+
+
+
+
+
+<figure class="wp-block-image size-full"><img src="https://storage.googleapis.com/stateless-reyzeal-com/2022/04/a9acdc32-image.png" srcset="/img/loading.gif" lazyload alt="" class="wp-image-148"/></figure>
+
+
+
+
+
+<p>Demikian untuk konfigurasi dasar untuk dockerfile nodejs. Semoga lain kesempatan akan kita bisa membahas tentang multistage dockerfile untuk nodejs maupun typescript. Saya juga menulis tentang konfigurasi docker untuk bahasa lain seperti <a href="https://reyzeal.com/2022/04/26/Konfigurasi-Docker-PHP-untuk-Google-Cloud-Run/" target="_blank" rel="noreferrer noopener">php</a> dan tutorial untuk melakukan <a href="https://reyzeal.com/2022/04/instalasi-font-di-docker/" target="_blank" rel="noreferrer noopener">instalasi font di docker</a>.</p>
+
+
+
+
+
+<h3>Daftar Links</h3>
+
+
+
+
+
+<p>"Dockerizing a Node.js Web App" - <a href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/" target="_blank" rel="noreferrer noopener">https://nodejs.org/en/docs/guides/nodejs-docker-webapp/</a></p>
+
+
+
+
+
+<p>"Quickstart: Deploy a Node.js service to Cloud Run" - <a href="https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service" target="_blank" rel="noreferrer noopener">https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service</a></p>
+
+
+
+
+
+<p>"Container run contract" - <a href="https://cloud.google.com/run/docs/container-contract" target="_blank" rel="noreferrer noopener">https://cloud.google.com/run/docs/container-contract</a></p>
+
+
 
                 
               </div>
@@ -280,15 +437,15 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/puppeteer/">#puppeteer</a>
-      
-        <a href="/tags/automation/">#automation</a>
-      
-        <a href="/tags/virtual-machine/">#virtual machine</a>
-      
         <a href="/tags/cloud/">#cloud</a>
       
-        <a href="/tags/google-cloud-platform/">#google cloud platform</a>
+        <a href="/tags/docker/">#docker</a>
+      
+        <a href="/tags/dockerfile/">#dockerfile</a>
+      
+        <a href="/tags/webservice/">#webservice</a>
+      
+        <a href="/tags/nodejs/">#nodejs</a>
       
     </div>
   
@@ -300,8 +457,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Pengaturan Puppeteer di VM GCP</div>
-      <div>https://reyzeal.com/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/</div>
+      <div>Konfigurasi Docker Nodejs untuk Google Cloud Run</div>
+      <div>https://reyzeal.com/2023/04/28/Konfigurasi-Docker-Nodejs-untuk-Google-Cloud-Run/</div>
     </div>
     <div class="license-meta">
       
@@ -313,7 +470,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 3, 2023</div>
+          <div>April 28, 2023</div>
         </div>
       
       
@@ -345,9 +502,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/04/Kunci-Katla/" title="Kunci Katla">
+                      <a href="/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/" title="Pengaturan Puppeteer di VM GCP">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Kunci Katla</span>
+                        <span class="hidden-mobile">Pengaturan Puppeteer di VM GCP</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -355,8 +512,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/28/Konfigurasi-Docker-Nodejs-untuk-Google-Cloud-Run/" title="Konfigurasi Docker Nodejs untuk Google Cloud Run">
-                        <span class="hidden-mobile">Konfigurasi Docker Nodejs untuk Google Cloud Run</span>
+                      <a href="/2022/04/26/Konfigurasi-Docker-PHP-untuk-Google-Cloud-Run/" title="Konfigurasi Docker PHP untuk Google Cloud Run">
+                        <span class="hidden-mobile">Konfigurasi Docker PHP untuk Google Cloud Run</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

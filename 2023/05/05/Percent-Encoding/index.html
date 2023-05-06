@@ -16,28 +16,25 @@
   <meta name="author" content="Rey">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya b">
+    <meta name="description" content="Percent-encoding adalah mekanisme penulisan beberapa karakter sehingga tidak merusak konteks URL. Karena ada beberapa karakter yang apabila ditulis secara eksplisit maka akan membuat ambigu struktur U">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pengaturan Puppeteer di VM GCP">
-<meta property="og:url" content="https://reyzeal.com/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/index.html">
+<meta property="og:title" content="Percent Encoding">
+<meta property="og:url" content="https://reyzeal.com/2023/05/05/Percent-Encoding/index.html">
 <meta property="og:site_name" content="Reyzeal">
-<meta property="og:description" content="Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya b">
+<meta property="og:description" content="Percent-encoding adalah mekanisme penulisan beberapa karakter sehingga tidak merusak konteks URL. Karena ada beberapa karakter yang apabila ditulis secara eksplisit maka akan membuat ambigu struktur U">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://reyzeal.com/images/pengaturan_gcp_1.png">
-<meta property="article:published_time" content="2023-05-03T14:45:55.000Z">
-<meta property="article:modified_time" content="2023-05-03T15:08:33.100Z">
+<meta property="article:published_time" content="2023-05-05T12:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-06T07:10:05.301Z">
 <meta property="article:author" content="Rey">
-<meta property="article:tag" content="puppeteer">
-<meta property="article:tag" content="automation">
-<meta property="article:tag" content="virtual machine">
-<meta property="article:tag" content="cloud">
-<meta property="article:tag" content="google cloud platform">
+<meta property="article:tag" content="encoding">
+<meta property="article:tag" content="url">
+<meta property="article:tag" content="website">
+<meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://reyzeal.com/images/pengaturan_gcp_1.png">
   
   
   
-  <title>Reyzeal | Pengaturan Puppeteer di VM GCP - Reyzeal</title>
+  <title>Reyzeal | Percent Encoding - Reyzeal</title>
   <meta name="title" content="Musafir Kehidupan">
 
   <meta property="og:type" content="website">
@@ -179,7 +176,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Pengaturan Puppeteer di VM GCP"></span>
+            <span id="subtitle" data-typed-text="Percent Encoding"></span>
           
         </div>
 
@@ -190,8 +187,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-03 21:45" pubdate>
-          May 3, 2023 pm
+        <time datetime="2023-05-05 19:00" pubdate>
+          May 5, 2023 pm
         </time>
       </span>
     
@@ -202,7 +199,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k words
+          1.3k words
         
       </span>
     
@@ -213,7 +210,7 @@
         
         
         
-          12 mins
+          11 mins
         
       </span>
     
@@ -251,23 +248,122 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Pengaturan Puppeteer di VM GCP</h1>
+            <h1 style="display: none">Percent Encoding</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Ada banyak hal yang bisa dilakukan dengan menjalankan puppeteer, selenium atau browser automation. Testing bisa, scraping bisa, task automation, dan lain sebagainya. Skrip yang sudah dibuat pastinya berjalan normal dilokal PC. Masalah justru muncul ketika implementasi ke server yang mana masalah utamanya adalah beda environment.</p>
-<p>Beberapa faktor saat implementasi di server:</p>
-<ol>
-<li>Server tidak memiliki display monitor, sehingga perlu membuat virtual display</li>
-<li>Driver&#x2F;Library yang dibutuhkan untuk keperluan display sistem</li>
-<li>Spesifikasi server yang kurang mumpuni, biasanya sih RAMnya</li>
-</ol>
-<h2 id="Konfigurasi-Display-di-Compute-Engine-GCP"><a href="#Konfigurasi-Display-di-Compute-Engine-GCP" class="headerlink" title="Konfigurasi Display di Compute Engine GCP"></a>Konfigurasi Display di Compute Engine GCP</h2><p><img src="/images/pengaturan_gcp_1.png" srcset="/img/loading.gif" lazyload alt="Display Device harus dicentang"><br>Pastikan Display Device sudah tercentang. Apabila belum, perlu menghentikan VM kemudian edit dan nyalakan ulang.</p>
-<h2 id="Ubuntu-Server-Driver-yang-dibutuhkan"><a href="#Ubuntu-Server-Driver-yang-dibutuhkan" class="headerlink" title="(Ubuntu Server) Driver yang dibutuhkan"></a>(Ubuntu Server) Driver yang dibutuhkan</h2><p>Ada beberapa library yang perlu diinstal untuk ubuntu server.</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> apt-get install -y gconf-service libasound2 libatk1.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libc6 libcairo2 libcups2 libdbus-<span class="hljs-number">1</span>-<span class="hljs-number">3</span> libexpat1 libfontconfig1 libgcc1 libgconf-<span class="hljs-number">2</span>-<span class="hljs-number">4</span> libgdk-pixbuf2.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libglib2.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libgtk-<span class="hljs-number">3</span>-<span class="hljs-number">0</span> libnspr4 libpango-<span class="hljs-number">1</span>.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libpangocairo-<span class="hljs-number">1</span>.<span class="hljs-number">0</span>-<span class="hljs-number">0</span> libstdc++<span class="hljs-number">6</span> libx11-<span class="hljs-number">6</span> libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget libgbm-dev<br></code></pre></td></tr></table></figure>
+                <p>Percent-encoding adalah mekanisme penulisan beberapa karakter sehingga tidak merusak konteks URL. Karena ada beberapa karakter yang apabila ditulis secara eksplisit maka akan membuat ambigu struktur URLnya. Percent-encoding ditandai dengan penulisan yang diawali dengan karakter <code>%</code> kemudian dilanjutkan dengan bilangan heksadesimal dari nilai ASCII karakter tsb.</p>
+<p>Beberapa karakter yang dimaksud adalah <code>:</code>, <code>/</code>, <code>?</code>, <code>#</code>, <code>[</code>, <code>]</code>, <code>@</code>, <code>!</code>, <code>$</code>, <code>&amp;</code>, <code>&#39;</code>, <code>(</code>, <code>)</code>, <code>*</code>, <code>+</code>, <code>,</code>, <code>;</code>, <code>=</code>, dan karakter <code>%</code> itu sendiri.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Character</th>
+      <th>Encoding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>':'</code></td>
+      <td><code>%3A</code></td>
+    </tr>
+    <tr>
+      <td><code>'/'</code></td>
+      <td><code>%2F</code></td>
+    </tr>
+    <tr>
+      <td><code>'?'</code></td>
+      <td><code>%3F</code></td>
+    </tr>
+    <tr>
+      <td><code>'#'</code></td>
+      <td><code>%23</code></td>
+    </tr>
+    <tr>
+      <td><code>'['</code></td>
+      <td><code>%5B</code></td>
+    </tr>
+    <tr>
+      <td><code>']'</code></td>
+      <td><code>%5D</code></td>
+    </tr>
+    <tr>
+      <td><code>'@'</code></td>
+      <td><code>%40</code></td>
+    </tr>
+    <tr>
+      <td><code>'!'</code></td>
+      <td><code>%21</code></td>
+    </tr>
+    <tr>
+      <td><code>'$'</code></td>
+      <td><code>%24</code></td>
+    </tr>
+    <tr>
+      <td><code>'&amp;'</code></td>
+      <td><code>%26</code></td>
+    </tr>
+    <tr>
+      <td><code>"'"</code></td>
+      <td><code>%27</code></td>
+    </tr>
+    <tr>
+      <td><code>'('</code></td>
+      <td><code>%28</code></td>
+    </tr>
+    <tr>
+      <td><code>')'</code></td>
+      <td><code>%29</code></td>
+    </tr>
+    <tr>
+      <td><code>'*'</code></td>
+      <td><code>%2A</code></td>
+    </tr>
+    <tr>
+      <td><code>'+'</code></td>
+      <td><code>%2B</code></td>
+    </tr>
+    <tr>
+      <td><code>','</code></td>
+      <td><code>%2C</code></td>
+    </tr>
+    <tr>
+      <td><code>';'</code></td>
+      <td><code>%3B</code></td>
+    </tr>
+    <tr>
+      <td><code>'='</code></td>
+      <td><code>%3D</code></td>
+    </tr>
+    <tr>
+      <td><code>'%'</code></td>
+      <td><code>%25</code></td>
+    </tr>
+    <tr>
+      <td><code>' '</code></td>
+      <td><code>%20</code> atau <code>+</code></td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="Spesifikasi-Server"><a href="#Spesifikasi-Server" class="headerlink" title="Spesifikasi Server"></a>Spesifikasi Server</h2><p>Biasanya untuk running 1 skrip membutuhkan minimal 300 MB, hal ini dikarenakan puppeteer perlu menjalankan browser meskipun berjalan secara headless. Asalkan 1 VM diperuntukkan khusus untuk 1 skrip automation, jenis machine <code>e2-micro</code> cukup kuat.</p>
+<p>Mengapa harus dilakukan encoding seperti ini? Paling mencolok adalah karakter <code>/</code> yang mana berarti sub direktori dari suatu URL, apabila suatu path berisi karakter tersebut maka parsing URL mengira pathnya sudah berpindah. Misalnya, kita perlu menulis suatu data url seperti <code>merah/hijau</code> dan dikirim ke path root <code>/</code> dari host. Bila ditulis ke URL <code>http://example.com/merah/hijau</code> maka path routingnya berbeda.</p>
+<h2 id="Percent-Encoding"><a href="#Percent-Encoding" class="headerlink" title="Percent Encoding"></a>Percent Encoding</h2><p>Cobain <code>percent-encoding</code> dah pake ini.</p>
+<div id="link-chat-wa">
+    <div>
+        <textarea onkeyup="percentEncoding()" style="width: 100%" placeholder="tulis teksnya disini" name="teks"></textarea>
+    </div>
+    <code id="hasil"></code>
+</div>
+<script type="application/javascript">
+    function percentEncoding() {
+        var teks = document.querySelector("[name=teks]");
+        document.getElementById("hasil").innerHTML = encodeURIComponent(teks.value)
+    }
+    linkChatWA()
+</script>
+
+<h2 id="Daftar-Pustaka"><a href="#Daftar-Pustaka" class="headerlink" title="Daftar Pustaka"></a>Daftar Pustaka</h2><p>“Percent Encoding” by <strong>Developer Mozilla</strong> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding">https://developer.mozilla.org/en-US/docs/Glossary/Percent-encoding</a></p>
+<p>“URL Encoding” by <strong>Wikipedia</strong> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/URL_encoding">https://en.wikipedia.org/wiki/URL_encoding</a></p>
 
                 
               </div>
@@ -280,15 +376,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/puppeteer/">#puppeteer</a>
+        <a href="/tags/encoding/">#encoding</a>
       
-        <a href="/tags/automation/">#automation</a>
+        <a href="/tags/url/">#url</a>
       
-        <a href="/tags/virtual-machine/">#virtual machine</a>
+        <a href="/tags/website/">#website</a>
       
-        <a href="/tags/cloud/">#cloud</a>
-      
-        <a href="/tags/google-cloud-platform/">#google cloud platform</a>
+        <a href="/tags/web/">#web</a>
       
     </div>
   
@@ -300,8 +394,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Pengaturan Puppeteer di VM GCP</div>
-      <div>https://reyzeal.com/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/</div>
+      <div>Percent Encoding</div>
+      <div>https://reyzeal.com/2023/05/05/Percent-Encoding/</div>
     </div>
     <div class="license-meta">
       
@@ -313,7 +407,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 3, 2023</div>
+          <div>May 5, 2023</div>
         </div>
       
       
@@ -345,9 +439,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/04/Kunci-Katla/" title="Kunci Katla">
+                      <a href="/2023/05/06/Membuat-Link-Chat-ke-Whatsapp/" title="Membuat Link Chat ke Whatsapp">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Kunci Katla</span>
+                        <span class="hidden-mobile">Membuat Link Chat ke Whatsapp</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -355,8 +449,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/28/Konfigurasi-Docker-Nodejs-untuk-Google-Cloud-Run/" title="Konfigurasi Docker Nodejs untuk Google Cloud Run">
-                        <span class="hidden-mobile">Konfigurasi Docker Nodejs untuk Google Cloud Run</span>
+                      <a href="/2023/05/04/Kunci-Katla/" title="Kunci Katla">
+                        <span class="hidden-mobile">Kunci Katla</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

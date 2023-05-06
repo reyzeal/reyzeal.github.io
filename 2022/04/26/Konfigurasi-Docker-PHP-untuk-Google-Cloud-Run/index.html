@@ -24,8 +24,9 @@
 <meta property="og:description" content="Bagaimana konfigurasi untuk menjalankan PHP di docker? Kali ini saya mencoba untuk membagikan tentang minimal konfigurasi untuk dockerfile PHP khususnya untuk dideploy di Google Cloud Run. Ada beberap">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-25T22:38:25.000Z">
-<meta property="article:modified_time" content="2023-05-04T22:47:59.322Z">
+<meta property="article:modified_time" content="2023-05-06T07:17:29.479Z">
 <meta property="article:author" content="Rey">
+<meta property="article:tag" content="cloud">
 <meta property="article:tag" content="docker">
 <meta property="article:tag" content="dockerfile">
 <meta property="article:tag" content="php">
@@ -266,7 +267,7 @@
 
 
 
-<h1 id="Konfigurasi-Dasar"><a href="#Konfigurasi-Dasar" class="headerlink" title="Konfigurasi Dasar"></a>Konfigurasi Dasar</h1><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> php:<span class="hljs-number">7.4</span>-apache<br><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /var/www/html</span><br><br><span class="hljs-comment"># mengubah port dari 80 ke PORT (8080 di GCR)</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> sed -i <span class="hljs-string">&#x27;s/80/$&#123;PORT&#125;/g&#x27;</span> /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf</span><br><br><span class="hljs-comment"># atau gunakan aja custom file conf dan mereplace 000-default.conf</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> vhost.conf /etc/apache2/sites-available/000-default.conf</span><br><br><span class="hljs-comment"># pastikan php.ini sudah diset</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> <span class="hljs-built_in">mv</span> \&quot;<span class="hljs-variable">$PHP_INI_DIR</span>/php.ini-production\&quot; \&quot;<span class="hljs-variable">$PHP_INI_DIR</span>/php.ini\&quot;</span><br></code></pre></td></tr></table></figure>
+<h1 id="Konfigurasi-Dasar"><a href="#Konfigurasi-Dasar" class="headerlink" title="Konfigurasi Dasar"></a>Konfigurasi Dasar</h1><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> php:<span class="hljs-number">7.4</span>-apache<br><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /var/www/html</span><br><br><span class="hljs-comment"># mengubah port dari 80 ke PORT (8080 di GCR)</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> sed -i <span class="hljs-string">&#x27;s/80/$&#123;PORT&#125;/g&#x27;</span> /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf</span><br><br><span class="hljs-comment"># atau gunakan aja custom file conf dan mereplace 000-default.conf</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> vhost.conf /etc/apache2/sites-available/000-default.conf</span><br><br><span class="hljs-comment"># pastikan php.ini sudah diset</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> <span class="hljs-built_in">mv</span> <span class="hljs-string">&quot;<span class="hljs-variable">$PHP_INI_DIR</span>/php.ini-production&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$PHP_INI_DIR</span>/php.ini&quot;</span></span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -278,7 +279,7 @@
 
 
 
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> php:<span class="hljs-number">7.4</span>-apache<br><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /var/www/html</span><br><br><span class="hljs-comment"># aktifkan mod</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> a2enmod rewrite</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> a2enmod header</span><br><br><span class="hljs-comment"># mengubah port dari 80 ke PORT (8080 di GCR)</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> sed -i <span class="hljs-string">&#x27;s/80/$&#123;PORT&#125;/g&#x27;</span> /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf</span><br><br><span class="hljs-comment"># atau gunakan aja custom file conf dan mereplace 000-default.conf</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> vhost.conf /etc/apache2/sites-available/000-default.conf</span><br><br><span class="hljs-comment"># pastikan php.ini sudah diset</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> <span class="hljs-built_in">mv</span> \&quot;<span class="hljs-variable">$PHP_INI_DIR</span>/php.ini-production\&quot; \&quot;<span class="hljs-variable">$PHP_INI_DIR</span>/php.ini\&quot;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> php:<span class="hljs-number">7.4</span>-apache<br><br><span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /var/www/html</span><br><br><span class="hljs-comment"># aktifkan mod</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> a2enmod rewrite</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> a2enmod header</span><br><br><span class="hljs-comment"># mengubah port dari 80 ke PORT (8080 di GCR)</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> sed -i <span class="hljs-string">&#x27;s/80/$&#123;PORT&#125;/g&#x27;</span> /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf</span><br><br><span class="hljs-comment"># atau gunakan aja custom file conf dan mereplace 000-default.conf</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> vhost.conf /etc/apache2/sites-available/000-default.conf</span><br><br><span class="hljs-comment"># pastikan php.ini sudah diset</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> <span class="hljs-built_in">mv</span> <span class="hljs-string">&quot;<span class="hljs-variable">$PHP_INI_DIR</span>/php.ini-production&quot;</span> <span class="hljs-string">&quot;<span class="hljs-variable">$PHP_INI_DIR</span>/php.ini&quot;</span></span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -296,7 +297,7 @@
 
 
 
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">RUN</span><span class="language-bash"> docker-php-ext-install -j \&quot;$(<span class="hljs-built_in">nproc</span>)\&quot; opcache pdo_mysql</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">RUN</span><span class="language-bash"> docker-php-ext-install -j <span class="hljs-string">&quot;<span class="hljs-subst">$(nproc)</span>&quot;</span> opcache pdo_mysql</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -338,7 +339,7 @@
 
 
 
-<p>Setelah composer terinstall, kita bisa memasang library yang dibutuhkan dalam project. Tetapi perlu diperhatikan bahwa ketika melakukan composer install kita harus memberikan parameter tambahan supaya composer melakukan instalasi tanpa meninggalkan cache dan \"sampah\" lainnya supaya image docker yang dihasilkan tidak membengkak.</p>
+<p>Setelah composer terinstall, kita bisa memasang library yang dibutuhkan dalam project. Tetapi perlu diperhatikan bahwa ketika melakukan composer install kita harus memberikan parameter tambahan supaya composer melakukan instalasi tanpa meninggalkan cache dan "sampah" lainnya supaya image docker yang dihasilkan tidak membengkak.</p>
 
 
 
@@ -350,27 +351,27 @@
 
 
 
-<p>Mungkin itu yang dapat saya bagikan. Masalah lain seperti <a href=\"https://reyzeal.com/2022/04/instalasi-font-di-docker/\" target=\"_blank\" rel="noreferrer noopener">memasang font di docker bisa dibaca disini</a>. Semoga bermanfaat.</p>
+<p>Mungkin itu yang dapat saya bagikan. Masalah lain seperti <a href="/2022/04/25/Instalasi-Font-di-Docker/" target="_blank" rel="noreferrer noopener">memasang font di docker bisa dibaca disini</a>. Semoga bermanfaat.</p>
 
 
 
 
 
 <h3 id="Daftar-Links"><a href="#Daftar-Links" class="headerlink" title="Daftar Links"></a>Daftar Links</h3><p>"Google Cloud Run Documentation for PHP" by <strong>GCP</strong><br>
-<a href=\"https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service\" target=\"_blank\" rel="noreferrer noopener">https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service</a>
+<a href="https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service" target="_blank" rel="noreferrer noopener">https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service</a>
 </p>
 
 
 
 
 
-<p>"Gist about list of php ext in docker" by <strong>chronon</strong><br><a href=\"https://gist.github.com/chronon/95911d21928cff786e306c23e7d1d3f3\" target=\"_blank\" rel="noreferrer noopener">https://gist.github.com/chronon/95911d21928cff786e306c23e7d1d3f3</a> </p>
+<p>"Gist about list of php ext in docker" by <strong>chronon</strong><br><a href="https://gist.github.com/chronon/95911d21928cff786e306c23e7d1d3f3" target="_blank" rel="noreferrer noopener">https://gist.github.com/chronon/95911d21928cff786e306c23e7d1d3f3</a> </p>
 
 
 
 
 
-<p>"Faster Docker Builds with composer install" by <strong>Iacovos Constantinou</strong><br><a href=\"https://medium.com/@softius/faster-docker-builds-with-composer-install-b4d2b15d0fff\" target=\"_blank\" rel="noreferrer noopener">https://medium.com/@softius/faster-docker-builds-with-composer-install-b4d2b15d0fff</a></p>
+<p>"Faster Docker Builds with composer install" by <strong>Iacovos Constantinou</strong><br><a href="https://medium.com/@softius/faster-docker-builds-with-composer-install-b4d2b15d0fff" target="_blank" rel="noreferrer noopener">https://medium.com/@softius/faster-docker-builds-with-composer-install-b4d2b15d0fff</a></p>
 
 
                 
@@ -383,6 +384,8 @@
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/cloud/">#cloud</a>
       
         <a href="/tags/docker/">#docker</a>
       
@@ -447,9 +450,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/03/Pengaturan-Puppeteer-di-VM-Compute-Engine-GCP/" title="Pengaturan Puppeteer di VM GCP">
+                      <a href="/2023/04/28/Konfigurasi-Docker-Nodejs-untuk-Google-Cloud-Run/" title="Konfigurasi Docker Nodejs untuk Google Cloud Run">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Pengaturan Puppeteer di VM GCP</span>
+                        <span class="hidden-mobile">Konfigurasi Docker Nodejs untuk Google Cloud Run</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
