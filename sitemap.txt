@@ -1,3 +1,4 @@
+https://reyzeal.com/2023/05/07/Potensi-SaaS-dalam-Peluang-Bisnis/
 https://reyzeal.com/2022/04/26/Konfigurasi-Docker-PHP-untuk-Google-Cloud-Run/
 https://reyzeal.com/2023/04/28/Konfigurasi-Docker-Nodejs-untuk-Google-Cloud-Run/
 https://reyzeal.com/2023/05/05/Percent-Encoding/
@@ -33,3 +34,7 @@ https://reyzeal.com/tags/url/
 https://reyzeal.com/tags/website/
 https://reyzeal.com/tags/web/
 https://reyzeal.com/tags/nodejs/
+https://reyzeal.com/tags/SaaS/
+https://reyzeal.com/tags/Cloud/
+https://reyzeal.com/tags/Technologi/
+https://reyzeal.com/tags/Bisnis/
