@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>Kunci Wordle v2</title>
+    <link href="/2023/05/08/Kunci-Wordle-v2/"/>
+    <url>/2023/05/08/Kunci-Wordle-v2/</url>
+    
+    <content type="html"><![CDATA[<p>Wordle sebuah permainan teka-teki yang memaksa kita untuk menerka, kira-kira kata apa yang muncul hari ini. Permainan yang sederhana berisi kotak berjejer lima dengan jumlah baris 6 buah, kita dituntut untuk bisa menebak maksimal 6 kali untuk sebuah kata dengan 5 karakter. Tapi, untuk versi kedua ini kuncinya terlalu mudah untuk didapatkan sehingga kita bisa mencontek apa kata yang keluar hari itu.</p><p>Sebenarnya permainan ini mirip dengan <a href="https://reyzeal.com/2023/05/04/Kunci-Katla/">katla</a> yang mana untuk versi saat ini masih bisa ditebak. Hanya saja untuk wordle, kuncinya terlalu mudah untuk didapat. Bila katla harus menggunakan kriptografi dan permainan encoding, wordle justru hanya bermodal endpoint API servicenya saja.</p><p>Berbeda dengan katla, wordle melakukan tracking data user dengan menyimpannya di server. Sedangkan katla hanya dilakukan di local storage saja, sehingga data user bisa seenaknya direset dengan clear local storage.</p><p>Ketika ada trafik API inilah saya menjadi curiga, jangan-jangan kata kuncinya bisa direquest melalui API. Dan ternyata benar, ketika saya mencoba inspect elemen dan memonitoring network, ada endpoint berbentuk seperti ini:</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>www.nytimes.com<span class="hljs-regexp">/svc/</span>wordle<span class="hljs-regexp">/v2/</span><span class="hljs-number">2023</span>-<span class="hljs-number">05</span>-<span class="hljs-number">08</span>.json<br></code></pre></td></tr></table></figure><p><img src="/images/wordle1.png" alt="API Wordle v2 untuk tanggal 8 Mei 2023"></p><p><img src="/images/wordle2.png" alt="Hasil tanggal 8 Mei 2023"></p><p>Ternyata solutionnya tidak dilakukan hash&#x2F;encryption sehingga langsung bisa didapatkan. Seharusnya, untuk data semacam <code>solution</code> ini tidak diberikan secara plain text. Bisa dengan hash, encoding atau apapun. Ini menjadi pelajaran kita bahwa keamanan siber itu perlu diupayakan. Memang kunci akan lebih mudah dikonsumsi oleh aplikasi &#x2F; program, namun dari segi keamanan, orang bisa dengan mudah melakukan bypass tanpa ada effort apapun. Memang bener sih, tidak ada yang aman di dunia ini, yang ada adalah kerepotan yang membuat sesuatu itu menjadi aman. Semoga bermanfaat. </p><div style="width: 100%; display: flex; flex-direction: column; text-align: center"><iframe style="background: white; margin:auto;" src="" id="iframe"></iframe><figcaption class="image-caption" style="margin: 0 !important;">Data json wordle untuk hari ini</figcaption></div><script type="application/javascript">    const now = new Date();    const tanggal = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;    document.getElementById("iframe").src = `https://www.nytimes.com/svc/wordle/v2/${tanggal}.json`;</script>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hack</tag>
+      
+      <tag>web</tag>
+      
+      <tag>games</tag>
+      
+      <tag>security</tag>
+      
+      <tag>audit</tag>
+      
+      <tag>api</tag>
+      
+      <tag>json</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Potensi SaaS dalam Peluang Bisnis</title>
     <link href="/2023/05/07/Potensi-SaaS-dalam-Peluang-Bisnis/"/>
     <url>/2023/05/07/Potensi-SaaS-dalam-Peluang-Bisnis/</url>
@@ -100,6 +131,12 @@
       <tag>encryption</tag>
       
       <tag>base64</tag>
+      
+      <tag>games</tag>
+      
+      <tag>security</tag>
+      
+      <tag>audit</tag>
       
     </tags>
     

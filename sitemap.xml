@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>https://reyzeal.com/2023/05/08/Kunci-Wordle-v2/</loc>
+        
+        <lastmod>2023-05-07</lastmod>
+        
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/2023/05/04/Kunci-Katla/</loc>
+        
+        <lastmod>2023-05-07</lastmod>
+        
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
         <loc>https://reyzeal.com/2023/05/07/Potensi-SaaS-dalam-Peluang-Bisnis/</loc>
         
         <lastmod>2023-05-07</lastmod>
@@ -48,15 +66,6 @@
     
     <url>
         <loc>https://reyzeal.com/2022/04/25/Instalasi-Font-di-Docker/</loc>
-        
-        <lastmod>2023-05-04</lastmod>
-        
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://reyzeal.com/2023/05/04/Kunci-Katla/</loc>
         
         <lastmod>2023-05-04</lastmod>
         
@@ -294,6 +303,41 @@
     
     <url>
         <loc>https://reyzeal.com/tags/Bisnis/</loc>
+        <lastmod>2023-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/games/</loc>
+        <lastmod>2023-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/security/</loc>
+        <lastmod>2023-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/audit/</loc>
+        <lastmod>2023-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/api/</loc>
+        <lastmod>2023-05-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/json/</loc>
         <lastmod>2023-05-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
