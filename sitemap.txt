@@ -1,3 +1,4 @@
+https://reyzeal.com/2023/05/09/Menilai-Keaslian-Pengiriman-Data-Request-dengan-HMAC/
 https://reyzeal.com/2023/05/08/Kunci-Wordle-v2/
 https://reyzeal.com/2023/05/04/Kunci-Katla/
 https://reyzeal.com/2023/05/07/Potensi-SaaS-dalam-Peluang-Bisnis/
@@ -44,3 +45,5 @@ https://reyzeal.com/tags/security/
 https://reyzeal.com/tags/audit/
 https://reyzeal.com/tags/api/
 https://reyzeal.com/tags/json/
+https://reyzeal.com/tags/keamanan/
+https://reyzeal.com/tags/cybersecurity/

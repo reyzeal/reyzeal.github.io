@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Menilai Keaslian Pengiriman Data Request dengan HMAC</title>
+    <link href="/2023/05/09/Menilai-Keaslian-Pengiriman-Data-Request-dengan-HMAC/"/>
+    <url>/2023/05/09/Menilai-Keaslian-Pengiriman-Data-Request-dengan-HMAC/</url>
+    
+    <content type="html"><![CDATA[<p>Siapa yang belum mengenal tentang HMAC? HMAC dikenal dengan kepanjangan <em>hash-based message authentication code</em>, sebuah pesan kunci hash yang dapat digunakan sebagai otentikasi bahkan verifikasi dari data yang dikirimkan. Pesan hash ini dihasilkan dari fungsi hash kriptografis dengan berbekal parameter input data pesannya dan sebuah kunci. Jenisnya ada banyak mengikuti algoritma hash yang digunakan, seperti MD5, SHA1, SHA256, SHA512 dan sebagainya.</p><h2 id="Bagaimana-menilai-keaslian-suatu-data"><a href="#Bagaimana-menilai-keaslian-suatu-data" class="headerlink" title="Bagaimana menilai keaslian suatu data?"></a>Bagaimana menilai keaslian suatu data?</h2><p>Pertukaran data di HTTP pada dasarnya <em>stateless</em> sehingga suatu node tidak akan pernah tahu apakah request data satu dengan data selanjutnya berasal dari node yang sama. Supaya tahu apakah pengirim merupakan user yang dikenal, biasanya suatu request HTTP dilampirkan suatu data otentikasi, entah di header <code>authorization</code>, cookies, url query params dan lain sebagainya. Tapi, apakah data tersebut merupakan data asli atau hanya hasil tempering dari penyusup?</p><p>Makanya, kita bisa melakukan verifikasi data yang dikirimkan dengan HMAC ini. Apabila HMAC yang diberikan tidak cocok dengan HMAC hasil generate dari server, tentu itu menunjukkan bahwa request yang masuk adalah hasil tempering dari intruder.</p><h2 id="Bagaimana-teknis-verifikasi-data"><a href="#Bagaimana-teknis-verifikasi-data" class="headerlink" title="Bagaimana teknis verifikasi data?"></a>Bagaimana teknis verifikasi data?</h2><p>Saya akan memberikan contoh, cara bagaimana menggunakan HMAC ini dalam hal verifikasi data untuk keamanan Server to Server.</p><ol><li>Setiap server dipastikan memiliki kunci yang sama, atau setidaknya saling mengetahui kunci HMAC server yang hendak dihubungi.</li><li>Setiap body request dilakukan generate HMAC, kemudian disematkan dalam header. Misalnya, dalam header <code>authorization</code>, ataupun custom header lain <code>X-AUTH</code>.</li><li>Setiap request yang diterima, harus melalui middleware untuk pencocokan HMAC request dengan HMAC hasil dari generate server penerima.</li><li>Jika HMAC berbeda, maka request terhalang dan pesan error diberikan.</li></ol><p>Semoga bermanfaat</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>kriptografi</tag>
+      
+      <tag>hash</tag>
+      
+      <tag>web</tag>
+      
+      <tag>keamanan</tag>
+      
+      <tag>cybersecurity</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Kunci Wordle v2</title>
     <link href="/2023/05/08/Kunci-Wordle-v2/"/>
     <url>/2023/05/08/Kunci-Wordle-v2/</url>
