@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Cara Share Location dengan Data Latitude Longitude</title>
+    <link href="/2023/05/10/Cara-Share-Location-dengan-Data-Latitude-Longitude/"/>
+    <url>/2023/05/10/Cara-Share-Location-dengan-Data-Latitude-Longitude/</url>
+    
+    <content type="html"><![CDATA[<p>Sebenarnya di era digital ini, share location sangat mudah untuk dilakukan. Hampir seluruh platform sosial media bisa secara langsung share loc. Namun, ada kalanya kita hanya memiliki data latitude dan longitude saja. Lantas bagaimana mengubahnya kedalam google maps?</p><p>Mudah caranya, tapi Anda harus bisa membedakan dulu mana latitude, mana longitude. Latitude itu mewakili posisi sumbu Y dalam peta, sedangkan longitude itu posisi sumbu X. Untuk latitude, nilainya berada diantara 0° sampai 90°, nah untuk membedakan mana Utara mana Selatan biasanya data latitude untuk selatan diubah ke negatif. Untuk longitude, nilainya berada diantara 0° sampai 180° dengan ketentuan jika berada di timur prime meridian berarti positif dan barat prime meridian berarti negatif.</p><p><img src="/images/Cara-Share-Location-dengan-Data-Latitude-Longitude/img.png" alt="Latitude Longitude"></p><p>Contohnya Yogyakarta, contoh titik nilai DMSnya adalah <strong>7° 47’ 49.4448’’ S</strong> &amp; <strong>110° 22’ 13.9044’’ E</strong> atau jika diubah ke latitude longitude desimal adalah <strong>-7.797068</strong> &amp; <strong>110.370529</strong>. Nah apabila kita hanya memiliki latitude longitude saja, untuk share loc bisa menggunakan API query google maps.</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>www.google.com<span class="hljs-regexp">/maps/</span>search/?api=<span class="hljs-number">1</span>&amp;query=LATITUDE,LONGITUDE<br><br><span class="hljs-comment"># GPS Yogyakarta</span><br>https:<span class="hljs-regexp">//</span>www.google.com<span class="hljs-regexp">/maps/</span>search/?api=<span class="hljs-number">1</span>&amp;query=-<span class="hljs-number">7.797068</span>,<span class="hljs-number">110.370529</span><br></code></pre></td></tr></table></figure><p>Semoga bermanfaat.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>google maps</tag>
+      
+      <tag>maps</tag>
+      
+      <tag>latitude</tag>
+      
+      <tag>longitude</tag>
+      
+      <tag>latlong</tag>
+      
+      <tag>share location</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Menilai Keaslian Pengiriman Data Request dengan HMAC</title>
     <link href="/2023/05/09/Menilai-Keaslian-Pengiriman-Data-Request-dengan-HMAC/"/>
     <url>/2023/05/09/Menilai-Keaslian-Pengiriman-Data-Request-dengan-HMAC/</url>

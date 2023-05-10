@@ -1,3 +1,4 @@
+https://reyzeal.com/2023/05/10/Cara-Share-Location-dengan-Data-Latitude-Longitude/
 https://reyzeal.com/2023/05/09/Menilai-Keaslian-Pengiriman-Data-Request-dengan-HMAC/
 https://reyzeal.com/2023/05/08/Kunci-Wordle-v2/
 https://reyzeal.com/2023/05/04/Kunci-Katla/
@@ -47,3 +48,9 @@ https://reyzeal.com/tags/api/
 https://reyzeal.com/tags/json/
 https://reyzeal.com/tags/keamanan/
 https://reyzeal.com/tags/cybersecurity/
+https://reyzeal.com/tags/google-maps/
+https://reyzeal.com/tags/maps/
+https://reyzeal.com/tags/latitude/
+https://reyzeal.com/tags/longitude/
+https://reyzeal.com/tags/latlong/
+https://reyzeal.com/tags/share-location/
