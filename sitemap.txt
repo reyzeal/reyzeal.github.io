@@ -1,4 +1,5 @@
 https://reyzeal.com/2023/05/11/Arah-Kiblat/
+https://reyzeal.com/tools/index.html
 https://reyzeal.com/2023/05/10/Cara-Share-Location-dengan-Data-Latitude-Longitude/
 https://reyzeal.com/2023/05/09/Menilai-Keaslian-Pengiriman-Data-Request-dengan-HMAC/
 https://reyzeal.com/2023/05/08/Kunci-Wordle-v2/
@@ -58,3 +59,4 @@ https://reyzeal.com/tags/share-location/
 https://reyzeal.com/tags/kiblat/
 https://reyzeal.com/tags/kompas/
 https://reyzeal.com/tags/tool/
+https://reyzeal.com/tags/islam/

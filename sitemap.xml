@@ -11,6 +11,15 @@
     </url>
     
     <url>
+        <loc>https://reyzeal.com/tools/index.html</loc>
+        
+        <lastmod>2023-05-11</lastmod>
+        
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
         <loc>https://reyzeal.com/2023/05/10/Cara-Share-Location-dengan-Data-Latitude-Longitude/</loc>
         
         <lastmod>2023-05-10</lastmod>
@@ -442,6 +451,13 @@
     
     <url>
         <loc>https://reyzeal.com/tags/tool/</loc>
+        <lastmod>2023-05-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>https://reyzeal.com/tags/islam/</loc>
         <lastmod>2023-05-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
