@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>Arah Kiblat</title>
+    <link href="/2023/05/11/Arah-Kiblat/"/>
+    <url>/2023/05/11/Arah-Kiblat/</url>
+    
+    <content type="html"><![CDATA[<p>Arah kiblat secara latitude 21.422487 dan longitude 39.826206, tinggal bagaimana kita mengetahui posisi kita dan menghitung arah sudut dengan kompas kita. Saya sudah membuat aplikasi sederhana untuk mengetahui posisi kiblat. Coba berikan akses GPS ke browser Anda.</p><div class="derajat" style="text-align: center"></div><div class="compass" style="position: relative; width: 320px; height: 320px; border-radius: 50%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); margin: auto;">  <div class="arrow" style="position: absolute;  width: 0;  height: 0;  border-style: solid;  border-width: 30px 20px 0 20px;  transform: translateX(-50%);  left: 50%;  border-color: red transparent transparent transparent;  z-index: 1;"></div>  <div class="compass-circle" style="position: absolute;  width: 80%;  height: 80%;  top: 50%;  left: 50%;  transform: translate(-50%, -50%);  transition: transform 0.1s ease-out;  background: url(/images/Arah-Kiblat/compass.png) center    no-repeat;  background-size: contain;"></div></div><p>Semoga Bermanfaat.</p><script type="application/javascript">    const compassCircle = document.querySelector(".compass-circle");    const arrow = document.querySelector(".arrow");    const derajat = document.querySelector(".derajat");    const isIOS =      navigator.userAgent.match(/(iPod|iPhone|iPad)/) &&      navigator.userAgent.match(/AppleWebKit/);    let pointDegree;    let cek = document.getElementById("cek");    function calcDegreeToPoint(latitude, longitude) {      const point = {        lat: 21.422487,        lng: 39.826206,      };      const phiK = (point.lat * Math.PI) / 180.0;      const lambdaK = (point.lng * Math.PI) / 180.0;      const phi = (latitude * Math.PI) / 180.0;      const lambda = (longitude * Math.PI) / 180.0;      const psi =        (180.0 / Math.PI) *        Math.atan2(          Math.sin(lambdaK - lambda),          Math.cos(phi) * Math.tan(phiK) -            Math.sin(phi) * Math.cos(lambdaK - lambda)        );      return Math.round(psi);    }    function locationHandler(position) {      const { latitude, longitude } = position.coords;      pointDegree = calcDegreeToPoint(latitude, longitude);      if (pointDegree < 0) {        pointDegree = pointDegree + 360;      }      derajat.innerHTML = pointDegree + "°";    }    navigator.geolocation.getCurrentPosition(locationHandler);    if (!isIOS) {        window.addEventListener("deviceorientationabsolute", compassHandler, true);      }else{        DeviceOrientationEvent.requestPermission()                  .then((response) => {                    if (response === "granted") {                      window.addEventListener("deviceorientation", compassHandler, true);                    } else {                      alert("has to be allowed!");                    }                  })                  .catch(() => alert("not supported"));      }    function compassHandler(e){        var compass = e.webkitCompassHeading || Math.abs(e.alpha - 360);        compassCircle.style.transform = `translate(-50%,-50%) rotate(${-compass}deg)`;        if (            (pointDegree < Math.abs(compass) && pointDegree + 15 > Math.abs(compass)) ||            pointDegree > Math.abs(compass + 15) ||            pointDegree < Math.abs(compass)          ) {            arrow.style.borderColor = `green transparent transparent transparent`;          } else if (pointDegree) {            arrow.style.borderColor = `red transparent transparent transparent`;          }    }        function deg2coords(angle, radius) {      var x = radius * Math.sin(Math.PI * 2 * angle / 360);      var y = radius * Math.cos(Math.PI * 2 * angle / 360);        return [Math.round(x*100)/100,Math.round(y*100)/100];    }</script>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>kiblat</tag>
+      
+      <tag>kompas</tag>
+      
+      <tag>tool</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Cara Share Location dengan Data Latitude Longitude</title>
     <link href="/2023/05/10/Cara-Share-Location-dengan-Data-Latitude-Longitude/"/>
     <url>/2023/05/10/Cara-Share-Location-dengan-Data-Latitude-Longitude/</url>
