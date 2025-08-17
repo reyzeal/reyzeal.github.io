@@ -12,13 +12,16 @@
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.15.3",
     "@tailwindcss/vite": "^4.1.11",
+    "@tanstack/solid-query": "^5.85.3",
     "entities": "^6.0.1",
     "solid-js": "^1.9.7",
+    "solid-motionone": "^1.0.4",
     "tailwindcss": "^4.1.11",
     "vite-plugin-md": "^0.21.5",
     "vite-plugin-pages": "^0.33.1"
   },
   "devDependencies": {
+    "@iconify-icon/solid": "^3.0.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/bun": "^1.2.19",
     "gray-matter": "^4.0.3",

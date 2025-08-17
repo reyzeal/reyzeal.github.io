@@ -17,4 +17,20 @@ export default defineConfig({
       }),
       tailwindcss()
   ],
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks(id) {
+                    if (id.includes("node_modules")) {
+                        if (id.includes("solid-js")) return "solid";
+                        if (id.includes("@solidjs/router")) return "solid-router";
+                        if (id.includes("@tanstack/solid-query")) return "tanstack-query";
+                        if (id.includes("solid-motionone")) return "motion";
+                        if (id.includes("tailwindcss")) return "tailwind";
+                        return "vendor"; // fallback untuk deps lain
+                    }
+                },
+            },
+        },
+    },
 })
