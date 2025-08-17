@@ -1,0 +1,36 @@
+name: Deploy with Bun
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+        
+      - name: Build Posts
+        run: bun ./scripts/build.ts
+        
+      - name: Build project
+        run: bun run build
+        
+      - name: Deploy to GitHub Pages
+        if: ${{ github.repository == 'reyzeal/reyzeal.github.io' }}
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
