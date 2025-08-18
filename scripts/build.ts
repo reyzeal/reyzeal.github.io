@@ -50,7 +50,7 @@ export default function Post() {
     <>
       <Title>${data.title || slug}</Title>
       <Navbar/>
-      <article class="mt-2 px-3 md:px-16 min-h-screen prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
+      <article class="mt-2 mx-auto mb-4 px-3 md:px-16 min-h-screen prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
         <div innerHTML={\`${html.replace(/`/g, '\\`')}\`} />
       </article>
       <Footer/>

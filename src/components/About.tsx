@@ -37,10 +37,10 @@ export function About() {
     return <>
         <div id={"about"} class={"w-full bg-sky-600 text-white relative"}>
             <Divider color={"#FFF"} class={"w-full translate-y-[-1px]"} flip={true}/>
-            <div class={"flex flex-wrap w-full items-center justify-center p-12 md:p-32 gap-4"}>
+            <div class={"flex flex-wrap w-full items-center justify-center p-12 md:px-32 md:pb-32 gap-4"}>
                 <div ref={containerRef} class={"w-[200px]"}>
                     {/*<ImageFlip frontImage={"/rizal.jpeg"} backImage={"/rizal.jpeg"} triggerOnce={false} trigger={"hover"} direction={"horizontal"} />*/}
-                    <Motion.img onMotionComplete={() => setAnimated(true)} initial={{opacity:0}} animate={{opacity:shouldAnimate()?1:0}} transition={{delay:1.3, duration:1}} src={"/rizal.jpeg"} class={"p-0 w-full bg-white rounded-md shadow-md"}/>
+                    <Motion.img onMotionComplete={() => setAnimated(true)} initial={{opacity:0}} animate={{opacity:shouldAnimate()?1:0}} transition={{delay:0.3, duration:1}} src={"/rizal.jpeg"} class={"p-0 w-full bg-white rounded-md shadow-md"}/>
                 </div>
                 <div class={"max-w-md prose-sky mb-5 md:mb-0"}>
                     <h2 class="font-semibold text-3xl mb-5">About Me</h2>

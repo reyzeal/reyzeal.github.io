@@ -34,6 +34,12 @@ export function TechStack(){
             link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
         },
         {
+            title: "Python",
+            description: "Programming Language",
+            icon: <Icon icon={"skill-icons:python-dark"} width={32} />,
+            link: "https://www.python.org/",
+        },
+        {
             title: "GCP",
             description: "Cloud Platform",
             icon: <Icon icon={"skill-icons:gcp-light"} width={32} />,
@@ -128,7 +134,31 @@ export function TechStack(){
             description: "Repo & Workflow",
             icon: <Icon icon={"skill-icons:github-dark"} width={32} />,
             link: "https://github.com/",
+        },{
+            title: "Firebase",
+            description: "BaaS Platform",
+            icon: <Icon icon={"logos:firebase-icon"} width={32} />,
+            link: "https://firebase.google.com/",
+        },{
+            title: "RabbitMQ",
+            description: "Message Broker",
+            icon: <Icon icon={"devicon:rabbitmq"} width={32} />,
+            link: "https://www.rabbitmq.com/",
         },
+        {
+            title: "Cloudflare",
+            description: "CDN & Security",
+            icon: <Icon icon={"devicon:cloudflare"} width={32} />,
+            link: "https://www.cloudflare.com/",
+        },
+        {
+            title: "OpenCV",
+            description: "Computer Vision",
+            icon: <Icon icon={"skill-icons:opencv-light"} width={32} />,
+            link: "https://opencv.org",
+        },
+
+
 
     ];
     createEffect(() => {
@@ -147,7 +177,7 @@ export function TechStack(){
                  initial={{opacity:0}}
                  animate={isVisible(refs[index()])?{opacity:1}:{opacity:0}}
                  transition={{duration:2}}
-
+                                         hover={{scale:1.05, background: "#a0d5f4"}}
                 >
                         <div class="flex justify-center items-center p-2">{x.icon}</div>
                         <div class="flex-grow text-left">
