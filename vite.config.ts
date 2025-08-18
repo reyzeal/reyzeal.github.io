@@ -15,7 +15,25 @@ export default defineConfig({
           resolver: "solid",
           extensions: ['tsx', 'md'],
       }),
-      tailwindcss()
+      tailwindcss(),
+      // {
+      //     name: "hash-json-public",
+      //     enforce: "post",
+      //     apply: "build",
+      //     generateBundle() {
+      //         const publicDir = path.resolve(__dirname, "src/assets");
+      //         const distDir = path.resolve(__dirname, "dist");
+      //         const files = fs.readdirSync(publicDir).filter(f => f.endsWith(".json"));
+      //
+      //         for (const file of files) {
+      //             const content = fs.readFileSync(path.join(publicDir, file));
+      //             const hash = require("crypto").createHash("md5").update(content).digest("hex").slice(0, 8);
+      //             const newName = file.replace(".json", `.${hash}.json`);
+      //             fs.copyFileSync(path.join(publicDir, file), path.join(distDir, newName));
+      //             console.log(`${file} → ${newName}`);
+      //         }
+      //     },
+      // },
   ],
     build: {
         rollupOptions: {

@@ -63,8 +63,8 @@ export default function Post() {
         console.log(`✅ Generated ${slug}.tsx`)
     }
 
-    fs.writeFileSync(path.join(path.resolve("public"), "posts.json"), JSON.stringify(database, null, 2))
-    fs.writeFileSync(path.join(path.resolve("public"), "portfolio.json"), JSON.stringify(portfolio, null, 2))
+    fs.writeFileSync(path.join(path.resolve("src/assets"), "posts.json"), JSON.stringify(database, null, 2))
+    fs.writeFileSync(path.join(path.resolve("src/assets"), "portfolio.json"), JSON.stringify(portfolio, null, 2))
 }
 
 build()
