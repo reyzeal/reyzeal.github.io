@@ -1,0 +1,1 @@
+import{Q as r}from"./vendor-DMu_XpO4.js";import{f as a,o as i,c as o,a as t}from"./solid-0Js-RdNK.js";var u=t(void 0),d=e=>(a(n=>(n?.(),e.client.mount(),e.client.unmount.bind(e.client))),i(()=>e.client.unmount()),o(u.Provider,{value:()=>e.client,get children(){return e.children}})),c=t(()=>!1);c.Provider;var v=class extends r{constructor(e={}){super(e)}};export{v as Q,d as a};
