@@ -1,13 +1,23 @@
 [
   {
-    "slug": "hello-world",
-    "title": "Hello Markdown",
-    "description": "lorem ipsum",
+    "slug": "rfid-linen-tracker",
+    "title": "RFID Linen Tracker",
+    "description": "RFID Linen Tracker adalah sistem full web-based untuk memonitor linen secara real-time menggunakan RFID devices.",
     "tags": [
       "portfolio"
     ],
     "tech": [
-      "rust",
+      "typescript"
+    ]
+  },
+  {
+    "slug": "devops-multitenant-deployment-automation",
+    "title": "Multi-Tenant Deployment Automation",
+    "description": "Membangun automation pipeline untuk deployment project multi-tenant",
+    "tags": [
+      "portfolio"
+    ],
+    "tech": [
       "typescript"
     ]
   }
