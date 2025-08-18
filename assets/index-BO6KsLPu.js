@@ -1,1 +1,0 @@
-import{N as o,F as r}from"./index-tSmO9bkd.js";import{c as s}from"./solid-DsUIy2vl.js";import"./motion-nZR50XNx.js";import"./vendor-BG9hIiMD.js";import"./iconify-B4jCpxar.js";import"./solid-router-BSF9JNIU.js";import"./tanstack-query-BV5ybvHc.js";function t(){return[s(o,{}),"asdasd",s(r,{})]}export{t as default};
