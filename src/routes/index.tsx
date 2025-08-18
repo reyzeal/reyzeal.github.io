@@ -8,6 +8,8 @@ import {WorkExperience} from "../components/WorkExperience.tsx";
 import {TechStack} from "../components/TechStack.tsx";
 import {Blog} from "../components/Blog.tsx";
 import {Title} from "@solidjs/meta";
+import {onMount} from "solid-js";
+import {useNavigate} from "@solidjs/router";
 
 export default function (){
     // const content = [
@@ -24,6 +26,14 @@ export default function (){
     //         </div>
     //     }
     // ];
+    const navigate = useNavigate();
+    onMount(() => {
+        let redirectTo = localStorage.getItem("redirectTo");
+        if(redirectTo){
+            localStorage.removeItem("redirectTo");
+            navigate(redirectTo);
+        }
+    })
     return <>
         <Title>Rizal Ardhi Rahmadani | Full Stack Software Engineer</Title>
         <Navbar />

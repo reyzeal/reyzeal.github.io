@@ -3,7 +3,8 @@
         <title></title>
         <script>
             const redirectTo = window.location.pathname + window.location.search + window.location.hash;
-            window.location.replace('/index.html' + redirectTo);
+            localStorage.setItem('redirectTo', redirectTo);
+            window.location.replace('/');
         </script>
     </head>
     <body></body>
