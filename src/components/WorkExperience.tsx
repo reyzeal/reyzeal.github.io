@@ -53,8 +53,8 @@ export function WorkExperience() {
                         <span class="absolute -translate-[250%] translate-y-1/2 flex items-center justify-center w-3 h-3 bg-gray-300 rounded-full ring-6 ring-white"></span>
                         {/* content */}
                         <div class="flex flex-col pb-5 w-full">
-                            <h4 class="font-medium text-gray-800">{work.place} - <span class={"font-semibold underline"}>{work.title}</span></h4>
-                            <p class={"text-muted-foreground text-justify"}>{work.duration}</p>
+                            <h4 class="text-sm text-gray-800">{work.place} - <span class={"font-semibold underline"}>{work.title}</span></h4>
+                            <p class={"text-muted-foreground text-justify text-xs"}>{work.duration}</p>
                         </div>
                     </Motion.li>
                 ))}

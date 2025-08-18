@@ -10,7 +10,7 @@ export default defineConfig({
       md(),
       Pages({
           dirs: [
-              {dir: "src/routes", baseRoute:""}
+              {dir: "src/routes", baseRoute:""},
           ],
           resolver: "solid",
           extensions: ['tsx', 'md'],

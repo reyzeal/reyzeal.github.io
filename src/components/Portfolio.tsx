@@ -29,7 +29,7 @@ export function Portfolio() {
                         </p>
                         <Button variant={ButtonVariant.Secondary} class={"w-1/2 mb-3"} onClick={(e) => {
                             e.preventDefault();
-                            navigate("/posts/"+p.slug)
+                            navigate("/portfolio/"+p.slug)
                         }}>
                             Read More
                         </Button>

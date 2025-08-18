@@ -163,7 +163,7 @@ export function TechStack(){
     // })
     return <div class={"w-full flex flex-col gap-4"}>
         <h3 class={"text-3xl text-center font-semibold"}>My Tech Stack</h3>
-        <p class={"text-center my-2"}>My daily toolkit featuring code, deployment, runtime and tools.</p>
+        <p class={"text-center my-2 px-2"}>My daily toolkit featuring code, deployment, runtime and tools.</p>
         <div class={"text-center w-full flex flex-wrap justify-center items-center gap-4"}>
             <For each={techs}>
                 {(x, index) => <Motion.a ref={(el) => {

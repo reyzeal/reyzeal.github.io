@@ -7,6 +7,7 @@ import { Contact } from "../components/Contact.tsx";
 import {WorkExperience} from "../components/WorkExperience.tsx";
 import {TechStack} from "../components/TechStack.tsx";
 import {Blog} from "../components/Blog.tsx";
+import {Title} from "@solidjs/meta";
 
 export default function (){
     // const content = [
@@ -24,6 +25,7 @@ export default function (){
     //     }
     // ];
     return <>
+        <Title>Rizal Ardhi Rahmadani | Full Stack Software Engineer</Title>
         <Navbar />
         <Hero/>
         <About/>

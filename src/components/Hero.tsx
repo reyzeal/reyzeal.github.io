@@ -22,7 +22,7 @@ const Hero: Component = () => {
     return (
         <section class="relative z-0 flex flex-col bg-background text-foreground items-center justify-center text-center">
             {/* Background gradient */}
-            <div class="absolute inset-0 -z-10 bg-gradient-to-b from-sky-50 to-white"></div>
+            <div class="absolute inset-0 -z-10 bg-gradient-to-b from-sky-200 to-white"></div>
             <div class="flex flex-col items-center justify-center text-center px-6 py-24 md:py-32">
                 <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900">
                     Hi, I’m <span class="text-sky-600">Rizal</span>

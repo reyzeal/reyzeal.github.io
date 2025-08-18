@@ -13,7 +13,8 @@
       "vite",
       "docker",
       "github"
-    ]
+    ],
+    "date": "2025-08-01T00:00:00.000Z"
   },
   {
     "slug": "rfid-linen-tracker",
@@ -27,6 +28,7 @@
       "typescript",
       "bun",
       "tailwind"
-    ]
+    ],
+    "date": "2025-08-01T00:00:00.000Z"
   }
 ]
