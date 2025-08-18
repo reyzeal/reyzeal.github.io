@@ -36,6 +36,14 @@ export default defineConfig({
       // },
   ],
     build: {
+      minify: "terser",
+        terserOptions: {
+          compress: {
+              drop_console: true,
+              drop_debugger: true,
+          },
+            mangle: true
+        },
         rollupOptions: {
             output: {
                 manualChunks(id) {
@@ -45,6 +53,7 @@ export default defineConfig({
                         if (id.includes("@tanstack/solid-query")) return "tanstack-query";
                         if (id.includes("solid-motionone")) return "motion";
                         if (id.includes("tailwindcss")) return "tailwind";
+                        if (id.includes("@iconify-icon/solid")) return "iconify";
                         return "vendor"; // fallback untuk deps lain
                     }
                 },

@@ -27,7 +27,7 @@ export function WorkExperience() {
         {place:"Shinery Aesthetic", title:"Software Engineer", duration: "Salatiga, Remote | Part Time | 2022-2023"},
         {place:"IPiring.com", title:"CTO", duration: "Yogyakarta | Full Time | 2022-2023"},
         {place:"IPiring.com", title:"Backend Developer", duration: "Yogyakarta, Remote | Full Time | 2020-2022"},
-        {place:"Freelancer", title:"Web Developer & Server Admin", duration: "Worldwide, Online | Full Time |2019-2020"},
+        {place:"Freelancer", title:"Web Developer & Server Admin", duration: "Worldwide, Online | Full Time | 2019-2020"},
     ];
 
     return (
@@ -52,9 +52,9 @@ export function WorkExperience() {
                         {/* dot */}
                         <span class="absolute -translate-[250%] translate-y-1/2 flex items-center justify-center w-3 h-3 bg-gray-300 rounded-full ring-6 ring-white"></span>
                         {/* content */}
-                        <div class="flex flex-col pb-5">
-                            <h4 class="font-medium text-gray-800">{work.place} - {work.title}</h4>
-                            <p class={"text-muted-foreground"}>{work.duration}</p>
+                        <div class="flex flex-col pb-5 w-full">
+                            <h4 class="font-medium text-gray-800">{work.place} - <span class={"font-semibold underline"}>{work.title}</span></h4>
+                            <p class={"text-muted-foreground text-justify"}>{work.duration}</p>
                         </div>
                     </Motion.li>
                 ))}

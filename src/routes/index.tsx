@@ -30,11 +30,6 @@ export default function (){
         <WorkExperience/>
         <TechStack/>
         <Portfolio/>
-        {/*<StickyScroll*/}
-        {/*    content={content}*/}
-        {/*    contentClassName="custom-content-class"*/}
-        {/*    class="custom-container-class"*/}
-        {/*/>*/}
         <Blog/>
         <Contact/>
         <Footer/>

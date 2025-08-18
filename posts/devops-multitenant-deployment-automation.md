@@ -6,9 +6,14 @@ tags:
 - portfolio
 tech:
 - typescript
+- bun
+- node.js
+- vite
+- docker
+- github
 ---
 
-Tech Stack: CI/CD (GitHub Actions / GitLab CI), Docker, Environment Config Management
+Tech Stack: CI/CD (GitHub Actions), Docker, Environment Config Management
 
 ## Overview:
 Saya membangun automation pipeline untuk deployment project multi-tenant. Setiap kali frontend selesai dikembangkan dan versi baru dirilis, sistem meng-compile frontend per tenant environment secara otomatis, memastikan konfigurasi khusus tenant tetap konsisten dan mengurangi human error.

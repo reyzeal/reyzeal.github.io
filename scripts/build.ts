@@ -31,21 +31,27 @@ async function build() {
                 tags: data.tags ?? [],
                 tech: data.tech || [],
             })
+        }else{
+            database.push({
+                slug: slug,
+                title: data.title,
+                description: data.description ?? "",
+                tags: data.tags ?? [],
+                tech: data.tech || [],
+            })
         }
-        database.push({
-            slug: slug,
-            title: data.title,
-            description: data.description ?? "",
-            tags: data.tags ?? [],
-            tech: data.tech || [],
-        })
+
 
         const tsx = `\
 import { Title } from "@solidjs/meta";
 import Navbar from "../../components/Navbar.tsx";
 import {Footer} from "../../components/Footer.tsx";
+import {For} from "solid-js";
+import {TechsRecord} from "../../utils/techRecords.ts";
+import {Icon} from "@iconify-icon/solid";
 
 export default function Post() {
+  const techs = ${JSON.stringify(data.tech ?? [])};
   return (
     <>
       <Title>${data.title || slug}</Title>
@@ -53,6 +59,11 @@ export default function Post() {
       <article class="mt-2 mx-auto mb-4 px-3 md:px-16 min-h-screen prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
         <div innerHTML={\`${html.replace(/`/g, '\\`')}\`} />
       </article>
+      <div class={"flex flex-wrap justify-center items-center gap-2 my-5"}>
+                            <For each={techs}>
+                                {tech => TechsRecord[tech]?.icon?<Icon icon={TechsRecord[tech]?.icon} width={20} class={""}/>:tech}
+                            </For>
+                        </div>
       <Footer/>
     </>
   );

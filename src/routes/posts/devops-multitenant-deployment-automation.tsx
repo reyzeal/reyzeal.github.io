@@ -1,14 +1,18 @@
 import { Title } from "@solidjs/meta";
 import Navbar from "../../components/Navbar.tsx";
 import {Footer} from "../../components/Footer.tsx";
+import {For} from "solid-js";
+import {TechsRecord} from "../../utils/techRecords.ts";
+import {Icon} from "@iconify-icon/solid";
 
 export default function Post() {
+  const techs = ["typescript","bun","node.js","vite","docker","github"];
   return (
     <>
       <Title>Multi-Tenant Deployment Automation</Title>
       <Navbar/>
       <article class="mt-2 mx-auto mb-4 px-3 md:px-16 min-h-screen prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
-        <div innerHTML={`<p>Tech Stack: CI/CD (GitHub Actions / GitLab CI), Docker, Environment Config Management</p>
+        <div innerHTML={`<p>Tech Stack: CI/CD (GitHub Actions), Docker, Environment Config Management</p>
 <h2>Overview:</h2>
 <p>Saya membangun automation pipeline untuk deployment project multi-tenant. Setiap kali frontend selesai dikembangkan dan versi baru dirilis, sistem meng-compile frontend per tenant environment secara otomatis, memastikan konfigurasi khusus tenant tetap konsisten dan mengurangi human error.</p>
 <h2>Key Features:</h2>
@@ -31,6 +35,11 @@ Solution: Full CI/CD automation yang otomatis compile &amp; deploy.</p>
 </ul>
 `} />
       </article>
+      <div class={"flex flex-wrap justify-center items-center gap-2 my-5"}>
+                            <For each={techs}>
+                                {tech => TechsRecord[tech]?.icon?<Icon icon={TechsRecord[tech]?.icon} width={20} class={""}/>:tech}
+                            </For>
+                        </div>
       <Footer/>
     </>
   );

@@ -1,8 +1,12 @@
 import { Title } from "@solidjs/meta";
 import Navbar from "../../components/Navbar.tsx";
 import {Footer} from "../../components/Footer.tsx";
+import {For} from "solid-js";
+import {TechsRecord} from "../../utils/techRecords.ts";
+import {Icon} from "@iconify-icon/solid";
 
 export default function Post() {
+  const techs = ["solid","typescript","bun","tailwind"];
   return (
     <>
       <Title>RFID Linen Tracker</Title>
@@ -28,6 +32,11 @@ Solution: TanStack Table dengan virtual scrolling &amp; TailwindCSS untuk render
 <p>Mendukung monitoring inventory real-time sehingga mengurangi kehilangan linen dan memaksimalkan efisiensi operasional.</p>
 `} />
       </article>
+      <div class={"flex flex-wrap justify-center items-center gap-2 my-5"}>
+                            <For each={techs}>
+                                {tech => TechsRecord[tech]?.icon?<Icon icon={TechsRecord[tech]?.icon} width={20} class={""}/>:tech}
+                            </For>
+                        </div>
       <Footer/>
     </>
   );

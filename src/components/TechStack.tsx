@@ -1,4 +1,4 @@
-import {createEffect, For} from "solid-js";
+import {For} from "solid-js";
 import {Icon} from "@iconify-icon/solid";
 import {createIntersectionObserver} from "../utils/createIntersectionObserver.ts";
 import {Motion} from "solid-motionone";
@@ -157,13 +157,10 @@ export function TechStack(){
             icon: <Icon icon={"skill-icons:opencv-light"} width={32} />,
             link: "https://opencv.org",
         },
-
-
-
     ];
-    createEffect(() => {
-        console.log(refs)
-    })
+    // createEffect(() => {
+    //     console.log(refs)
+    // })
     return <div class={"w-full flex flex-col gap-4"}>
         <h3 class={"text-3xl text-center font-semibold"}>My Tech Stack</h3>
         <p class={"text-center my-2"}>My daily toolkit featuring code, deployment, runtime and tools.</p>
@@ -185,7 +182,7 @@ export function TechStack(){
                             <p class={"text-sm text-muted-foreground"}>{x.description}</p>
                         </div>
                         <div class={"flex justify-center items-center p-2"}>
-                            <Icon icon={"ep:arrow-right-bold"} width={24} color={"#b9cee3"} />
+                            <Icon icon={"ep:arrow-right-bold"} width={24} class={"color-[#b9cee3]"} />
                         </div>
                 </Motion.a> }
             </For>

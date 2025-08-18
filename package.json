@@ -11,23 +11,28 @@
   "dependencies": {
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.15.3",
-    "@tailwindcss/vite": "^4.1.11",
     "@tanstack/solid-query": "^5.85.3",
     "entities": "^6.0.1",
-    "solid-js": "^1.9.7",
+    "solid-js": "^1.9.9",
     "solid-motionone": "^1.0.4",
-    "tailwindcss": "^4.1.11",
-    "vite-plugin-md": "^0.21.5",
-    "vite-plugin-pages": "^0.33.1"
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@iconify-icon/solid": "^3.0.0",
     "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.12",
     "@types/bun": "^1.2.20",
     "gray-matter": "^4.0.3",
-    "marked": "^16.1.1",
+    "marked": "^16.2.0",
+    "rollup-plugin-obfuscator": "^1.1.0",
+    "terser": "^5.43.1",
     "typescript": "~5.8.3",
-    "vite": "^7.0.4",
-    "vite-plugin-solid": "^2.11.7"
-  }
+    "vite": "^7.1.2",
+    "vite-plugin-md": "^0.21.5",
+    "vite-plugin-pages": "^0.33.1",
+    "vite-plugin-solid": "^2.11.8"
+  },
+  "trustedDependencies": [
+    "@tailwindcss/oxide"
+  ]
 }

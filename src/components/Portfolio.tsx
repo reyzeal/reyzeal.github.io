@@ -4,6 +4,7 @@ import portfolio from "../assets/portfolio.json";
 import {Icon} from "@iconify-icon/solid";
 import Button, {ButtonVariant} from "./Button.tsx";
 import {useNavigate} from "@solidjs/router";
+import {TechsRecord} from "../utils/techRecords.ts";
 // import {useQuery} from "@tanstack/solid-query";
 
 export function Portfolio() {
@@ -32,9 +33,9 @@ export function Portfolio() {
                         }}>
                             Read More
                         </Button>
-                        <div class={"flex flex-wrap justify-center items-center"}>
+                        <div class={"flex flex-wrap justify-center items-center gap-2"}>
                             <For each={p.tech}>
-                                {tech => <Icon icon={"material-icon-theme:"+ tech} width={20} class={""}/>}
+                                {tech => TechsRecord[tech]?.icon?<Icon icon={TechsRecord[tech]?.icon} width={20} class={""}/>:tech}
                             </For>
                         </div>
                     </div>}

@@ -5,7 +5,10 @@ description: RFID Linen Tracker adalah sistem full web-based untuk memonitor lin
 tags:
   - portfolio
 tech:
+  - solid
   - typescript
+  - bun
+  - tailwind
 
 ---
 
